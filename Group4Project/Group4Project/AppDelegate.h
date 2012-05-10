@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  Group4Project
+//  Music147_2012
 //
-//  Created by Kojiro Umezaki on 5/9/12.
+//  Created by Kojiro Umezaki on 4/21/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

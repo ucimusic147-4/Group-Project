@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2137AF78155C73D100DD2C57 /* AQPlayer_SF.m in Sources */ = {isa = PBXBuildFile; fileRef = 2137AF5D155C73D100DD2C57 /* AQPlayer_SF.m */; };
+		2137AF79155C73D100DD2C57 /* AQPlayer_Synth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2137AF5F155C73D100DD2C57 /* AQPlayer_Synth.m */; };
+		2137AF7A155C73D100DD2C57 /* AQPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2137AF61155C73D100DD2C57 /* AQPlayer.m */; };
 		217A37CB155B542400201779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217A37CA155B542400201779 /* UIKit.framework */; };
 		217A37CD155B542400201779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217A37CC155B542400201779 /* Foundation.framework */; };
 		217A37CF155B542400201779 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217A37CE155B542400201779 /* CoreGraphics.framework */; };
@@ -14,13 +17,23 @@
 		217A37D7155B542400201779 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 217A37D6155B542400201779 /* main.m */; };
 		217A37DB155B542400201779 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 217A37DA155B542400201779 /* AppDelegate.m */; };
 		217A37DE155B542400201779 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217A37DD155B542400201779 /* ViewController.m */; };
-		217A37E1155B542400201779 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217A37DF155B542400201779 /* ViewController_iPhone.xib */; };
-		217A37E4155B542400201779 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217A37E2155B542400201779 /* ViewController_iPad.xib */; };
 		217A37EC155B542400201779 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217A37EB155B542400201779 /* SenTestingKit.framework */; };
 		217A37ED155B542400201779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217A37CA155B542400201779 /* UIKit.framework */; };
 		217A37EE155B542400201779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217A37CC155B542400201779 /* Foundation.framework */; };
 		217A37F6155B542400201779 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 217A37F4155B542400201779 /* InfoPlist.strings */; };
 		217A37F9155B542400201779 /* Group4ProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 217A37F8155B542400201779 /* Group4ProjectTests.m */; };
+		21D6E890155C744E003B5254 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E883155C744E003B5254 /* MyView.m */; };
+		21D6E891155C744E003B5254 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E885155C744E003B5254 /* Note.m */; };
+		21D6E892155C744E003B5254 /* Sequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E887155C744E003B5254 /* Sequence.m */; };
+		21D6E893155C744E003B5254 /* Sequencer.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E889155C744E003B5254 /* Sequencer.m */; };
+		21D6E894155C744E003B5254 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E88B155C744E003B5254 /* Singleton.m */; };
+		21D6E895155C744E003B5254 /* SoundFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E88D155C744E003B5254 /* SoundFile.m */; };
+		21D6E896155C744E003B5254 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21D6E88E155C744E003B5254 /* ViewController_iPad.xib */; };
+		21D6E897155C744E003B5254 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21D6E88F155C744E003B5254 /* ViewController_iPhone.xib */; };
+		21D6E899155C748C003B5254 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D6E898155C748C003B5254 /* AudioToolbox.framework */; };
+		21D6E8A0155C74B2003B5254 /* Voice_Sine.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E89B155C74B2003B5254 /* Voice_Sine.m */; };
+		21D6E8A1155C74B2003B5254 /* Voice_Synth.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E89D155C74B2003B5254 /* Voice_Synth.m */; };
+		21D6E8A2155C74B2003B5254 /* Voice.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E89F155C74B2003B5254 /* Voice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2137AF5C155C73D100DD2C57 /* AQPlayer_SF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQPlayer_SF.h; sourceTree = "<group>"; };
+		2137AF5D155C73D100DD2C57 /* AQPlayer_SF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQPlayer_SF.m; sourceTree = "<group>"; };
+		2137AF5E155C73D100DD2C57 /* AQPlayer_Synth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQPlayer_Synth.h; sourceTree = "<group>"; };
+		2137AF5F155C73D100DD2C57 /* AQPlayer_Synth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQPlayer_Synth.m; sourceTree = "<group>"; };
+		2137AF60155C73D100DD2C57 /* AQPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQPlayer.h; sourceTree = "<group>"; };
+		2137AF61155C73D100DD2C57 /* AQPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQPlayer.m; sourceTree = "<group>"; };
 		217A37C6155B542400201779 /* Group4Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group4Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		217A37CA155B542400201779 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		217A37CC155B542400201779 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,14 +65,33 @@
 		217A37DA155B542400201779 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		217A37DC155B542400201779 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		217A37DD155B542400201779 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		217A37E0155B542400201779 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		217A37E3155B542400201779 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		217A37EA155B542400201779 /* Group4ProjectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Group4ProjectTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		217A37EB155B542400201779 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		217A37F3155B542400201779 /* Group4ProjectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Group4ProjectTests-Info.plist"; sourceTree = "<group>"; };
 		217A37F5155B542400201779 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		217A37F7155B542400201779 /* Group4ProjectTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Group4ProjectTests.h; sourceTree = "<group>"; };
 		217A37F8155B542400201779 /* Group4ProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Group4ProjectTests.m; sourceTree = "<group>"; };
+		21D6E882155C744E003B5254 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		21D6E883155C744E003B5254 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		21D6E884155C744E003B5254 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		21D6E885155C744E003B5254 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		21D6E886155C744E003B5254 /* Sequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sequence.h; sourceTree = "<group>"; };
+		21D6E887155C744E003B5254 /* Sequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sequence.m; sourceTree = "<group>"; };
+		21D6E888155C744E003B5254 /* Sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sequencer.h; sourceTree = "<group>"; };
+		21D6E889155C744E003B5254 /* Sequencer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sequencer.m; sourceTree = "<group>"; };
+		21D6E88A155C744E003B5254 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		21D6E88B155C744E003B5254 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
+		21D6E88C155C744E003B5254 /* SoundFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundFile.h; sourceTree = "<group>"; };
+		21D6E88D155C744E003B5254 /* SoundFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundFile.m; sourceTree = "<group>"; };
+		21D6E88E155C744E003B5254 /* ViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPad.xib; sourceTree = "<group>"; };
+		21D6E88F155C744E003B5254 /* ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
+		21D6E898155C748C003B5254 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		21D6E89A155C74B2003B5254 /* Voice_Sine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Sine.h; sourceTree = "<group>"; };
+		21D6E89B155C74B2003B5254 /* Voice_Sine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Sine.m; sourceTree = "<group>"; };
+		21D6E89C155C74B2003B5254 /* Voice_Synth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Synth.h; sourceTree = "<group>"; };
+		21D6E89D155C74B2003B5254 /* Voice_Synth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Synth.m; sourceTree = "<group>"; };
+		21D6E89E155C74B2003B5254 /* Voice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice.h; sourceTree = "<group>"; };
+		21D6E89F155C74B2003B5254 /* Voice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D6E899155C748C003B5254 /* AudioToolbox.framework in Frameworks */,
 				217A37CB155B542400201779 /* UIKit.framework in Frameworks */,
 				217A37CD155B542400201779 /* Foundation.framework in Frameworks */,
 				217A37CF155B542400201779 /* CoreGraphics.framework in Frameworks */,
@@ -83,6 +122,7 @@
 		217A37BB155B542300201779 = {
 			isa = PBXGroup;
 			children = (
+				21D6E898155C748C003B5254 /* AudioToolbox.framework */,
 				217A37D0155B542400201779 /* Group4Project */,
 				217A37F1155B542400201779 /* Group4ProjectTests */,
 				217A37C9155B542400201779 /* Frameworks */,
@@ -113,12 +153,36 @@
 		217A37D0155B542400201779 /* Group4Project */ = {
 			isa = PBXGroup;
 			children = (
+				2137AF5C155C73D100DD2C57 /* AQPlayer_SF.h */,
+				2137AF5D155C73D100DD2C57 /* AQPlayer_SF.m */,
+				2137AF5E155C73D100DD2C57 /* AQPlayer_Synth.h */,
+				2137AF5F155C73D100DD2C57 /* AQPlayer_Synth.m */,
+				2137AF60155C73D100DD2C57 /* AQPlayer.h */,
+				2137AF61155C73D100DD2C57 /* AQPlayer.m */,
 				217A37D9155B542400201779 /* AppDelegate.h */,
 				217A37DA155B542400201779 /* AppDelegate.m */,
+				21D6E882155C744E003B5254 /* MyView.h */,
+				21D6E883155C744E003B5254 /* MyView.m */,
+				21D6E884155C744E003B5254 /* Note.h */,
+				21D6E885155C744E003B5254 /* Note.m */,
+				21D6E886155C744E003B5254 /* Sequence.h */,
+				21D6E887155C744E003B5254 /* Sequence.m */,
+				21D6E888155C744E003B5254 /* Sequencer.h */,
+				21D6E889155C744E003B5254 /* Sequencer.m */,
+				21D6E88A155C744E003B5254 /* Singleton.h */,
+				21D6E88B155C744E003B5254 /* Singleton.m */,
+				21D6E88C155C744E003B5254 /* SoundFile.h */,
+				21D6E88D155C744E003B5254 /* SoundFile.m */,
 				217A37DC155B542400201779 /* ViewController.h */,
 				217A37DD155B542400201779 /* ViewController.m */,
-				217A37DF155B542400201779 /* ViewController_iPhone.xib */,
-				217A37E2155B542400201779 /* ViewController_iPad.xib */,
+				21D6E88E155C744E003B5254 /* ViewController_iPad.xib */,
+				21D6E88F155C744E003B5254 /* ViewController_iPhone.xib */,
+				21D6E89A155C74B2003B5254 /* Voice_Sine.h */,
+				21D6E89B155C74B2003B5254 /* Voice_Sine.m */,
+				21D6E89C155C74B2003B5254 /* Voice_Synth.h */,
+				21D6E89D155C74B2003B5254 /* Voice_Synth.m */,
+				21D6E89E155C74B2003B5254 /* Voice.h */,
+				21D6E89F155C74B2003B5254 /* Voice.m */,
 				217A37D1155B542400201779 /* Supporting Files */,
 			);
 			path = Group4Project;
@@ -225,8 +289,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				217A37D5155B542400201779 /* InfoPlist.strings in Resources */,
-				217A37E1155B542400201779 /* ViewController_iPhone.xib in Resources */,
-				217A37E4155B542400201779 /* ViewController_iPad.xib in Resources */,
+				21D6E896155C744E003B5254 /* ViewController_iPad.xib in Resources */,
+				21D6E897155C744E003B5254 /* ViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +328,18 @@
 				217A37D7155B542400201779 /* main.m in Sources */,
 				217A37DB155B542400201779 /* AppDelegate.m in Sources */,
 				217A37DE155B542400201779 /* ViewController.m in Sources */,
+				2137AF78155C73D100DD2C57 /* AQPlayer_SF.m in Sources */,
+				2137AF79155C73D100DD2C57 /* AQPlayer_Synth.m in Sources */,
+				2137AF7A155C73D100DD2C57 /* AQPlayer.m in Sources */,
+				21D6E890155C744E003B5254 /* MyView.m in Sources */,
+				21D6E891155C744E003B5254 /* Note.m in Sources */,
+				21D6E892155C744E003B5254 /* Sequence.m in Sources */,
+				21D6E893155C744E003B5254 /* Sequencer.m in Sources */,
+				21D6E894155C744E003B5254 /* Singleton.m in Sources */,
+				21D6E895155C744E003B5254 /* SoundFile.m in Sources */,
+				21D6E8A0155C74B2003B5254 /* Voice_Sine.m in Sources */,
+				21D6E8A1155C74B2003B5254 /* Voice_Synth.m in Sources */,
+				21D6E8A2155C74B2003B5254 /* Voice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,22 +370,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		217A37DF155B542400201779 /* ViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				217A37E0155B542400201779 /* en */,
-			);
-			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		217A37E2155B542400201779 /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				217A37E3155B542400201779 /* en */,
-			);
-			name = ViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
 		217A37F4155B542400201779 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -325,7 +385,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -351,7 +414,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv6,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
@@ -374,6 +440,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Group4Project/Group4Project-Prefix.pch";
 				INFOPLIST_FILE = "Group4Project/Group4Project-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -385,6 +452,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Group4Project/Group4Project-Prefix.pch";
 				INFOPLIST_FILE = "Group4Project/Group4Project-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -443,6 +511,7 @@
 				217A37FE155B542400201779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		217A37FF155B542400201779 /* Build configuration list for PBXNativeTarget "Group4ProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +520,7 @@
 				217A3801155B542400201779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
