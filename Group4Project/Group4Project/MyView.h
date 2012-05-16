@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// stephen added a note
+
 #import <UIKit/UIKit.h>
 
 @interface MyView : UIView {
