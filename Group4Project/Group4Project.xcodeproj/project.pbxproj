@@ -34,6 +34,7 @@
 		21D6E8A0155C74B2003B5254 /* Voice_Sine.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E89B155C74B2003B5254 /* Voice_Sine.m */; };
 		21D6E8A1155C74B2003B5254 /* Voice_Synth.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E89D155C74B2003B5254 /* Voice_Synth.m */; };
 		21D6E8A2155C74B2003B5254 /* Voice.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E89F155C74B2003B5254 /* Voice.m */; };
+		7A650B1F1564767600FE0CFB /* Voice_Wavetable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A650B1E1564767600FE0CFB /* Voice_Wavetable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		21D6E89D155C74B2003B5254 /* Voice_Synth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Synth.m; sourceTree = "<group>"; };
 		21D6E89E155C74B2003B5254 /* Voice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice.h; sourceTree = "<group>"; };
 		21D6E89F155C74B2003B5254 /* Voice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice.m; sourceTree = "<group>"; };
+		7A650B1D1564767600FE0CFB /* Voice_Wavetable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Wavetable.h; sourceTree = "<group>"; };
+		7A650B1E1564767600FE0CFB /* Voice_Wavetable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Wavetable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 				21D6E89A155C74B2003B5254 /* Voice_Sine.h */,
 				21D6E89B155C74B2003B5254 /* Voice_Sine.m */,
 				21D6E89C155C74B2003B5254 /* Voice_Synth.h */,
+				7A650B1D1564767600FE0CFB /* Voice_Wavetable.h */,
+				7A650B1E1564767600FE0CFB /* Voice_Wavetable.m */,
 				21D6E89D155C74B2003B5254 /* Voice_Synth.m */,
 				21D6E89E155C74B2003B5254 /* Voice.h */,
 				21D6E89F155C74B2003B5254 /* Voice.m */,
@@ -340,6 +345,7 @@
 				21D6E8A0155C74B2003B5254 /* Voice_Sine.m in Sources */,
 				21D6E8A1155C74B2003B5254 /* Voice_Synth.m in Sources */,
 				21D6E8A2155C74B2003B5254 /* Voice.m in Sources */,
+				7A650B1F1564767600FE0CFB /* Voice_Wavetable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
