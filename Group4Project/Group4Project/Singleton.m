@@ -18,8 +18,9 @@
     self = [super init];
     
     NSLog(@"Initializing Singleton object.");
-    
-    aqp = [[AQPlayer_Synth alloc] init];
+
+    aqp = [[AQPlayer_SF alloc] init];
+
     
     q = [[Sequencer alloc] init];
     [q setBpm:133];

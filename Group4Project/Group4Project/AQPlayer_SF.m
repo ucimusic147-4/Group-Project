@@ -24,4 +24,15 @@
     [sf fillSampleBuffer:buffer:num_samples];
 }
 
+-(void)playToggle
+{
+    if ([sf isPaused]) {
+        [sf play];
+    }
+    else {
+        [sf pause];
+    }
+    
+}
+
 @end

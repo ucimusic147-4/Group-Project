@@ -16,7 +16,7 @@
 	
     /* get a path to the sound file */
     /* note that the file name and file extension are set here */
-	CFURLRef mSoundFileURLRef = CFBundleCopyResourceURL(CFBundleGetMainBundle(),CFSTR("Music147"),CFSTR("aif"),NULL);
+	CFURLRef mSoundFileURLRef = CFBundleCopyResourceURL(CFBundleGetMainBundle(),CFSTR("147-song-mono"),CFSTR("aif"),NULL);
 
 	/* open the file and get the fileID */
 	OSStatus result = noErr;
@@ -24,6 +24,8 @@
 	if (result != noErr)
 		NSLog(@"AudioFileOpenURL exception %ld",result);
 	
+    [self play];
+    
 	return self;
 }
 
@@ -40,7 +42,7 @@
 -(void)fillSampleBuffer:(Float64*)buffer:(UInt32)num_buf_samples
 {
     /* set up arguments needed by AudioFileReadPackets */
-	UInt32 ioNumPackets = num_buf_samples;
+	UInt32 ioNumPackets = num_buf_samples * 1 ;
 	SInt64 inStartingPacket = (SInt64)filePos; /* convert float to int */
 	UInt32 outNumBytes = 0;
 
@@ -50,14 +52,34 @@
 		NSLog(@"AudioFileReadPackets exception %ld",result);
 
     /* advance the member variable filePos to know where to read from next time this method is called */
-	filePos += ioNumPackets;
+	if (ioNumPackets == num_buf_samples * 1)
+    {
+        filePos += ioNumPackets;
+    }
+    else
+    {
+        filePos = 0;
+    }
 
+    if (pauseFile == NO)
+    {
 	/* convert the buffer of sample read from sound file into the app's internal audio buffer */
-	for (UInt32 buf_pos = 0; buf_pos < num_buf_samples; buf_pos++)
-	{
-		Float64 s = (SInt16)CFSwapInt16BigToHost(fileBuffer[buf_pos]);
-		buffer[buf_pos] += s / INT16_MAX;
-	}
+        for (UInt32 buf_pos = 0; buf_pos < num_buf_samples; buf_pos++)
+        {
+            Float64 s = (SInt16)CFSwapInt16BigToHost(fileBuffer[buf_pos*1]);
+            buffer[buf_pos] += s / INT16_MAX;
+        }
+    }
+}
+-(BOOL)isPaused { return pauseFile; }
+-(void)pause
+{
+    pauseFile = YES;
+}
+
+-(void)play
+{
+    pauseFile = NO;
 }
 
 @end

@@ -15,6 +15,7 @@
 
 extern AQPlayer *aqp;
 
+
 @implementation MyView
 
 - (id)initWithFrame:(CGRect)frame
@@ -38,7 +39,7 @@ extern AQPlayer *aqp;
 -(IBAction)toggleVoice0:(id)sender
 {
     NSLog(@"toggleVoice0");
-   // [aqp voiceToggle:0];
+    //[sf playToggle];
 }
 
 -(IBAction)toggleVoice1:(id)sender

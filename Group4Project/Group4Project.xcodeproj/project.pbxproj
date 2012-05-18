@@ -34,6 +34,8 @@
 		21D6E8A0155C74B2003B5254 /* Voice_Sine.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E89B155C74B2003B5254 /* Voice_Sine.m */; };
 		21D6E8A1155C74B2003B5254 /* Voice_Synth.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E89D155C74B2003B5254 /* Voice_Synth.m */; };
 		21D6E8A2155C74B2003B5254 /* Voice.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6E89F155C74B2003B5254 /* Voice.m */; };
+		7A48154F1565E8E1000354D5 /* 147-song-with_keys.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7A48154E1565E8E1000354D5 /* 147-song-with_keys.aif */; };
+		7A4815611565EFDC000354D5 /* 147-song-mono.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7A4815601565EFDC000354D5 /* 147-song-mono.aif */; };
 		7A650B1F1564767600FE0CFB /* Voice_Wavetable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A650B1E1564767600FE0CFB /* Voice_Wavetable.m */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,8 @@
 		21D6E89D155C74B2003B5254 /* Voice_Synth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Synth.m; sourceTree = "<group>"; };
 		21D6E89E155C74B2003B5254 /* Voice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice.h; sourceTree = "<group>"; };
 		21D6E89F155C74B2003B5254 /* Voice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice.m; sourceTree = "<group>"; };
+		7A48154E1565E8E1000354D5 /* 147-song-with_keys.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "147-song-with_keys.aif"; sourceTree = "<group>"; };
+		7A4815601565EFDC000354D5 /* 147-song-mono.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "147-song-mono.aif"; sourceTree = "<group>"; };
 		7A650B1D1564767600FE0CFB /* Voice_Wavetable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Wavetable.h; sourceTree = "<group>"; };
 		7A650B1E1564767600FE0CFB /* Voice_Wavetable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Wavetable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +160,8 @@
 		217A37D0155B542400201779 /* Group4Project */ = {
 			isa = PBXGroup;
 			children = (
+				7A48154E1565E8E1000354D5 /* 147-song-with_keys.aif */,
+				7A4815601565EFDC000354D5 /* 147-song-mono.aif */,
 				2137AF5C155C73D100DD2C57 /* AQPlayer_SF.h */,
 				2137AF5D155C73D100DD2C57 /* AQPlayer_SF.m */,
 				2137AF5E155C73D100DD2C57 /* AQPlayer_Synth.h */,
@@ -176,8 +182,8 @@
 				21D6E88B155C744E003B5254 /* Singleton.m */,
 				21D6E88C155C744E003B5254 /* SoundFile.h */,
 				21D6E88D155C744E003B5254 /* SoundFile.m */,
-				217A37DC155B542400201779 /* ViewController.h */,
 				217A37DD155B542400201779 /* ViewController.m */,
+				217A37DC155B542400201779 /* ViewController.h */,
 				21D6E88E155C744E003B5254 /* ViewController_iPad.xib */,
 				21D6E88F155C744E003B5254 /* ViewController_iPhone.xib */,
 				21D6E89A155C74B2003B5254 /* Voice_Sine.h */,
@@ -296,6 +302,8 @@
 				217A37D5155B542400201779 /* InfoPlist.strings in Resources */,
 				21D6E896155C744E003B5254 /* ViewController_iPad.xib in Resources */,
 				21D6E897155C744E003B5254 /* ViewController_iPhone.xib in Resources */,
+				7A48154F1565E8E1000354D5 /* 147-song-with_keys.aif in Resources */,
+				7A4815611565EFDC000354D5 /* 147-song-mono.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

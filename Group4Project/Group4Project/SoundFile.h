@@ -22,9 +22,16 @@
 	
     /* the index where the next read in the file will happen  */
 	Float64			filePos;
+    
+    BOOL         pauseFile;
+    
 }
 
 /* calling this will read the next buffer of samples */
 -(void)fillSampleBuffer:(Float64*)buffer:(UInt32)num_buf_samples;
+-(void)pause;
+-(void)play;
+-(BOOL)isPaused;
+
 
 @end

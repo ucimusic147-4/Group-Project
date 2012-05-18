@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 
 #import "Voice.h"
+#import "SoundFile.h"
 
 /* number of buffers used by system */
 #define kNumberBuffers	3
