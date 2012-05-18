@@ -66,8 +66,17 @@ extern AQPlayer *aqp;
     for (UITouch* t in touches)
     {
         CGPoint pt = [t locationInView:self];
+        
+        if ((pt.x<=160)&&(pt.y<=115))
+            [aqp voiceToggle:0];
+        if ((pt.x>160) && (pt.y<=115))
+            [aqp voiceToggle:1];
+        if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
+            [aqp voiceToggle:2];
+        if ((pt.x>160) && (pt.y>115 && pt.y<=230))
+            [aqp voiceToggle:3];
+        
         NSLog(@"%lf,%lf",pt.x,pt.y);
-        [aqp voiceToggle:1];
     }
     NSLog(@"%lf",event.timestamp);
 }
@@ -90,7 +99,7 @@ extern AQPlayer *aqp;
     {
         CGPoint pt = [t locationInView:self];
         NSLog(@"%lf,%lf",pt.x,pt.y);
-        [aqp voiceToggle:1];
+       // [aqp voiceToggle:1];
 
     }
     NSLog(@"%lf",event.timestamp);

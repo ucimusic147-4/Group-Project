@@ -19,7 +19,7 @@
     
     NSLog(@"Initializing Singleton object.");
 
-    aqp = [[AQPlayer_SF alloc] init];
+    aqp = [[AQPlayer_Synth alloc] init];
 
     
     q = [[Sequencer alloc] init];
