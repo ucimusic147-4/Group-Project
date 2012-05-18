@@ -10,6 +10,9 @@
 
 #import "AQPlayer.h"
 
+#import "Voice_Wavetable.h"
+
+
 extern AQPlayer *aqp;
 
 @implementation MyView
@@ -35,25 +38,25 @@ extern AQPlayer *aqp;
 -(IBAction)toggleVoice0:(id)sender
 {
     NSLog(@"toggleVoice0");
-    [aqp voiceToggle:0];
+   // [aqp voiceToggle:0];
 }
 
 -(IBAction)toggleVoice1:(id)sender
 {
     NSLog(@"toggleVoice1");
-    [aqp voiceToggle:1];
+  //  [aqp voiceToggle:1];
 }
 
 -(IBAction)toggleVoice2:(id)sender
 {
     NSLog(@"toggleVoice2");
-    [aqp voiceToggle:2];
+  //  [aqp voiceToggle:2];
 }
 
 -(IBAction)toggleVoice3:(id)sender
 {
     NSLog(@"toggleVoice3");
-    [aqp voiceToggle:3];
+   // [aqp voiceToggle:3];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -63,6 +66,7 @@ extern AQPlayer *aqp;
     {
         CGPoint pt = [t locationInView:self];
         NSLog(@"%lf,%lf",pt.x,pt.y);
+        [aqp voiceToggle:1];
     }
     NSLog(@"%lf",event.timestamp);
 }
@@ -85,6 +89,8 @@ extern AQPlayer *aqp;
     {
         CGPoint pt = [t locationInView:self];
         NSLog(@"%lf,%lf",pt.x,pt.y);
+        [aqp voiceToggle:1];
+
     }
     NSLog(@"%lf",event.timestamp);
 }
