@@ -13,17 +13,15 @@
 @synthesize amp;
 @synthesize env;
 
-
 -(id)init
 {
     self = [super init];
     
-    on = NO;
     amp = 0.;
-
+    
 	env = [[Envelope alloc] init];
-	env.attack = 0.05;
-	env.release = 0.05;    
+	env.attack = 0.1;
+	env.release = 1.0;
     
     return self;
 }
@@ -34,18 +32,16 @@
 
 -(BOOL)isOn
 {
-    return on;
+    return env.output > 0.;
 }
 
 -(void)on
 {
-    on = YES; amp = 0.25;
     [env on];
 }
 
 -(void)off
 {
-    on = NO; amp = 0.;
     [env off];
 }
 

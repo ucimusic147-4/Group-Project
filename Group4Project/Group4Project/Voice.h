@@ -12,7 +12,6 @@
 
 
 @interface Voice : NSObject {
-    BOOL on;
     Float64 amp;
     Envelope* env;
 
