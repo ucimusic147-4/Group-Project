@@ -11,12 +11,17 @@
 
 #import "Voice.h"
 #import "SoundFile.h"
+#import "Effect.h"
+
 
 /* number of buffers used by system */
 #define kNumberBuffers	3
 
 /* number of voice */
 #define kNumberVoices   4
+
+/* number of effects */
+#define kNumberEffects  4
 
 /* sample rate */
 #define kSR				22050.
@@ -28,6 +33,9 @@
 	AudioStreamBasicDescription	dataFormat;
     
     Voice* voices[kNumberVoices];
+    
+    Effect* effect[kNumberEffects];
+
 }
 
 -(void)setup;
