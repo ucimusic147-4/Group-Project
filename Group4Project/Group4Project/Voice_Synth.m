@@ -8,6 +8,7 @@
 
 #import "Voice_Synth.h"
 
+
 @implementation Voice_Synth
 
 @synthesize freq;
