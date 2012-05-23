@@ -138,7 +138,17 @@ void AQBufferCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRef 
     
 }
 
+-(void)voiceOn:(UInt16)pos
+{
+    [voices[pos] off];
+    [voices[pos] on];
+}
 
+-(void)voiceOff:(UInt16)pos
+{
+    [voices[pos] on];
+    [voices[pos] off];
+}
 
 -(void)reportElapsedTime:(Float64)elapsed_time
 {

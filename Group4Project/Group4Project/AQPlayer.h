@@ -48,6 +48,8 @@
 -(Voice*)getFreeVoice;
 
 -(void)voiceToggle:(UInt16)pos;
+-(void)voiceOn:(UInt16)pos;
+-(void)voiceOff:(UInt16)pos;
 
 -(void)reportElapsedTime:(Float64)elapsed_time;
 

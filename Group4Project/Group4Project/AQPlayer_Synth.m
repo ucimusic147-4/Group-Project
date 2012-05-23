@@ -20,11 +20,14 @@
 {
     self = [super init];
     
+    SInt32 pitches[4] = {60,64,67,72};
+
+    
     for (SInt32 i = 0; i < 4; i++)
     {
         voices[i] = [[Voice_Wavetable alloc] init];
         voices[i].amp = 1./kNumberVoices;
-        ((Voice_Synth*)voices[i]).freq = [Voice_Synth noteNumToFreq:45+(12*i)];
+        ((Voice_Synth*)voices[i]).freq = [Voice_Synth noteNumToFreq:pitches[i]];
     }
 
     effect[0] = [[Effect_Limiter alloc] init];
