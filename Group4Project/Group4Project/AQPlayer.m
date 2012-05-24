@@ -35,7 +35,7 @@ void AQBufferCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRef 
 		((SInt16 *)inAQBuffer->mAudioData)[i] = buffer[i] * (SInt16)INT16_MAX;
 	
     /* set the mAudioDataByteSize and mPacketDescriptionCount AudioQueueBuffer fields (for some reason) */
-	inAQBuffer->mAudioDataByteSize = 512;
+	inAQBuffer->mAudioDataByteSize = 512; // STEREO TROUBLESHOOT number of bytes in timeslice(?)
 	inAQBuffer->mPacketDescriptionCount = 0;
     
 	/* queue the updated AudioQueueBuffer */
@@ -68,12 +68,12 @@ void AQBufferCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRef 
 {
 	dataFormat.mFormatID = kAudioFormatLinearPCM;
 	dataFormat.mFormatFlags = kAudioFormatFlagIsSignedInteger;
-	dataFormat.mChannelsPerFrame = 1;
+	dataFormat.mChannelsPerFrame = 2;
 	dataFormat.mSampleRate = kSR;
 	dataFormat.mBitsPerChannel = 16;
 	dataFormat.mFramesPerPacket = 1;
-	dataFormat.mBytesPerPacket = sizeof(SInt16);
-	dataFormat.mBytesPerFrame = sizeof(SInt16);
+	dataFormat.mBytesPerPacket = sizeof(SInt16)*dataFormat.mChannelsPerFrame;
+	dataFormat.mBytesPerFrame = sizeof(SInt16)*dataFormat.mChannelsPerFrame;
 
     OSStatus result = AudioQueueNewOutput(&dataFormat, AQBufferCallback, nil, nil, nil, 0, &queue);
 	
