@@ -24,4 +24,7 @@
 
 -(void)touchX:(Float64)x;
 
+-(void)playToggle;
+
+
 @end

@@ -10,6 +10,7 @@
 
 #import "AQPlayer_SF.h"
 #import "AQPlayer_Synth.h"
+#import "AQPlayer_SynthSF.h"
 
 @implementation Singleton
 
@@ -19,7 +20,7 @@
     
     NSLog(@"Initializing Singleton object.");
 
-    aqp = [[AQPlayer_Synth alloc] init];
+    aqp = [[AQPlayer_SynthSF alloc] init];
 
     
     q = [[Sequencer alloc] init];
@@ -51,7 +52,12 @@
 -(void)touchX:(Float64)x
 {
     NSLog(@"touchX %lf",x);
-    [(AQPlayer_Synth*)aqp filterFreq:x*10000.];
+    [(AQPlayer_SynthSF*)aqp filterFreq:x*10000.];
+}
+
+-(void)playToggle
+{
+    [(AQPlayer_SynthSF*)aqp playToggle];
 }
 
 @end

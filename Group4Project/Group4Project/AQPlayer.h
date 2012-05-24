@@ -18,7 +18,7 @@
 #define kNumberBuffers	3
 
 /* number of voice */
-#define kNumberVoices   4
+#define kNumberVoices   5
 
 /* number of effects */
 #define kNumberEffects  4

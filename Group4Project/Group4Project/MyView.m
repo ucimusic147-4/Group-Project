@@ -39,10 +39,10 @@ extern Singleton* gSing;
 }
 */
 
--(IBAction)toggleVoice0:(id)sender
+-(IBAction)playToggle:(id)sender
 {
-    NSLog(@"toggleVoice0");
-    //[sf playToggle];
+    NSLog(@"playToggle");
+    [gSing playToggle];
 }
 
 -(IBAction)toggleVoice1:(id)sender
@@ -71,13 +71,13 @@ extern Singleton* gSing;
         CGPoint pt = [t locationInView:self];
         
         if ((pt.x<=160)&&(pt.y<=115))
-            [aqp voiceOn:0];
-        if ((pt.x>160) && (pt.y<=115))
             [aqp voiceOn:1];
-        if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
+        if ((pt.x>160) && (pt.y<=115))
             [aqp voiceOn:2];
-        if ((pt.x>160) && (pt.y>115 && pt.y<=230))
+        if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
             [aqp voiceOn:3];
+        if ((pt.x>160) && (pt.y>115 && pt.y<=230))
+            [aqp voiceOn:4];
         
         NSLog(@"%lf,%lf",pt.x,pt.y);
     }
@@ -105,13 +105,13 @@ extern Singleton* gSing;
         CGPoint pt = [t locationInView:self];
         
         if ((pt.x<=160)&&(pt.y<=115))
-            [aqp voiceOff:0];
-        if ((pt.x>160) && (pt.y<=115))
             [aqp voiceOff:1];
-        if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
+        if ((pt.x>160) && (pt.y<=115))
             [aqp voiceOff:2];
-        if ((pt.x>160) && (pt.y>115 && pt.y<=230))
+        if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
             [aqp voiceOff:3];
+        if ((pt.x>160) && (pt.y>115 && pt.y<=230))
+            [aqp voiceOff:4];
         
         NSLog(@"%lf,%lf",pt.x,pt.y);
        // [aqp voiceToggle:1];

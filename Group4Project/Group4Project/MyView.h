@@ -14,7 +14,7 @@
     
 }
 
--(IBAction)toggleVoice0:(id)sender;
+-(IBAction)playToggle:(id)sender;
 -(IBAction)toggleVoice1:(id)sender;
 -(IBAction)toggleVoice2:(id)sender;
 -(IBAction)toggleVoice3:(id)sender;
