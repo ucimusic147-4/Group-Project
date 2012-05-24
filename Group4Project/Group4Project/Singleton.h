@@ -22,4 +22,6 @@
 
 -(void)updateTime:(Float64)elapsed_time;
 
+-(void)touchX:(Float64)x;
+
 @end

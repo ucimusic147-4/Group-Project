@@ -50,4 +50,11 @@
             [effect[i] process:buffer:num_samples];
 }
 
+-(void)filterFreq:(Float64)freq
+{
+    NSLog(@"filterFreq %lf",freq);
+    //[((Effect_Biquad*)effect[1]) biQuad_set:LPF:0.:freq:kSR:1];    
+
+}
+
 @end

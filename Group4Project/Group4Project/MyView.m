@@ -9,11 +9,14 @@
 #import "MyView.h"
 
 #import "AQPlayer.h"
+#import "Singleton.h"
+
 
 #import "Voice_Wavetable.h"
 
 
 extern AQPlayer *aqp;
+extern Singleton* gSing;
 
 
 @implementation MyView
@@ -87,7 +90,9 @@ extern AQPlayer *aqp;
     for (UITouch* t in touches)
     {
         CGPoint pt = [t locationInView:self];
-        NSLog(@"%lf,%lf",pt.x,pt.y);
+        NSLog(@"%lf,%lf,%lf,%lf",pt.x,pt.y,self.bounds.size.width,self.bounds.size.height);
+        NSLog(@"%lf,%lf",pt.x/self.bounds.size.width,pt.y/self.bounds.size.height);
+        [gSing touchX:pt.x/self.bounds.size.width];
     }
     NSLog(@"%lf",event.timestamp);
 }

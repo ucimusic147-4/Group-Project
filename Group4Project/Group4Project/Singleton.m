@@ -48,4 +48,10 @@
     NSLog(@"%f %f %f",acceleration.x,acceleration.y,acceleration.z);
 }
 
+-(void)touchX:(Float64)x
+{
+    NSLog(@"touchX %lf",x);
+    [(AQPlayer_Synth*)aqp filterFreq:x*10000.];
+}
+
 @end
