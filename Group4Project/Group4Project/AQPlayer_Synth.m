@@ -13,6 +13,7 @@
 
 #import "Effect_Biquad.h"
 #import "Effect_Limiter.h"
+#import "Effect_Delay.h"
 
 @implementation AQPlayer_Synth
 
@@ -30,11 +31,15 @@
         ((Voice_Synth*)voices[i]).freq = [Voice_Synth noteNumToFreq:pitches[i]];
     }
 
-    effect[0] = [[Effect_Limiter alloc] init];
-    ((Effect_Limiter*)effect[0]).max_amp = 1.0;
+    effect[0] = [[Effect_Biquad alloc] init];
+    [((Effect_Biquad*)effect[0]) biQuad_set:LPF:0.:5000.:kSR:1.0];
     
-    effect[1] = [[Effect_Biquad alloc] init];
-    [((Effect_Biquad*)effect[1]) biQuad_set:LPF:0.:5000.:kSR:1];    
+    effect[1] = [[Effect_Delay alloc] init];
+    ((Effect_Delay*)effect[1]).delayTime = 1.75;    /* this must be less than kMaxDelayTime */
+    ((Effect_Delay*)effect[1]).delayAmp = 0.3;      /* this must be less than 1.0 */
+    
+    effect[2] = [[Effect_Limiter alloc] init];
+    ((Effect_Limiter*)effect[2]).max_amp = 1.0; 
     
     return self;
 }
