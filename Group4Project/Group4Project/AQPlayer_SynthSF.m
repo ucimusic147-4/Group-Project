@@ -22,19 +22,18 @@
     
     sf = [[SoundFile alloc] init];
     
-    SInt32 pitches[5] = {0,74,77,79,83,86,90,91,93};
+    SInt32 pitches[9] = {0,62,66,67,71,74,78,79,81};
     
-    voices[0] = sf;
-    voices[0].amp = 0.2;
-
     
     for (SInt32 i = 1; i < kNumberVoices; i++)
     {
         voices[i] = [[Voice_Wavetable alloc] init];
-        voices[i].amp = 1./(kNumberVoices);
+        voices[i].amp = 1./((kNumberVoices/3));
         ((Voice_Synth*)voices[i]).freq = [Voice_Synth noteNumToFreq:pitches[i]];
     }
     
+    voices[0] = sf;
+    voices[0].amp = 0.2;
     
     effect[0] = [[Effect_Limiter alloc] init];
     ((Effect_Limiter*)effect[0]).max_amp = 1.0;
