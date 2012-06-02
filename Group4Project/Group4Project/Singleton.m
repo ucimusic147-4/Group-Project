@@ -34,7 +34,7 @@
     //Sequence* seq = [[Sequence alloc] init];
     //[q setSeq:seq];
     
-   // [[UIAccelerometer sharedAccelerometer] setDelegate:self];
+    [[UIAccelerometer sharedAccelerometer] setDelegate:self];
     
     return self;
 }

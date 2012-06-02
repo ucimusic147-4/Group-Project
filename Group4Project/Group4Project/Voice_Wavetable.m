@@ -44,7 +44,7 @@
     for (UInt16 i = 0; i < kWaveTableSize; i++)
     {
         table[i] = table[i] / max;
-        NSLog(@"%d %f",i,table[i]);
+       // NSLog(@"%d %f",i,table[i]);
     }
     
     return self;

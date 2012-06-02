@@ -100,7 +100,7 @@ extern Singleton* gSing;
         
         NSLog(@"%lf,%lf",pt.x,pt.y);
     }
-    NSLog(@"%lf",event.timestamp);
+    //NSLog(@"%lf",event.timestamp);
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -113,7 +113,7 @@ extern Singleton* gSing;
         NSLog(@"%lf,%lf",pt.x/self.bounds.size.width,pt.y/self.bounds.size.height);
         [gSing touchX:pt.x/self.bounds.size.width];
     }
-    NSLog(@"%lf",event.timestamp);
+   // NSLog(@"%lf",event.timestamp);
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

@@ -44,6 +44,14 @@
     return self;
 }
 
+-(void)changeVoices
+{
+for (SInt32 i = 1; i < kNumberVoices; i++)
+{
+    ((Voice_Synth*)voices[i]).freq = ((Voice_Synth*)voices[i]).freq * 2;
+}
+}
+
 -(void)fillAudioBuffer:(Float64*)buffer:(UInt32)num_samples
 {
     for (SInt32 i = 0; i < kNumberVoices; i++)
