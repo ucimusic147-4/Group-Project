@@ -48,6 +48,7 @@
 		7A68609A157A93DB0018A3DC /* Envelope_Kick.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A686099157A93DB0018A3DC /* Envelope_Kick.m */; };
 		7A68609C157A9FFC0018A3DC /* cowbell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A68609B157A9FFC0018A3DC /* cowbell.wav */; };
 		7A68609F157AA0110018A3DC /* SoundFile_Cowbell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A68609E157AA0110018A3DC /* SoundFile_Cowbell.m */; };
+		7AA9C592157ABF8700AE5362 /* bluestest.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C591157ABF8700AE5362 /* bluestest.aif */; };
 		7AEF8E391576EC65004D84EE /* Effect_Delay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF8E381576EC65004D84EE /* Effect_Delay.m */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,7 @@
 		7A68609B157A9FFC0018A3DC /* cowbell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cowbell.wav; sourceTree = "<group>"; };
 		7A68609D157AA0110018A3DC /* SoundFile_Cowbell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundFile_Cowbell.h; sourceTree = "<group>"; };
 		7A68609E157AA0110018A3DC /* SoundFile_Cowbell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundFile_Cowbell.m; sourceTree = "<group>"; };
+		7AA9C591157ABF8700AE5362 /* bluestest.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bluestest.aif; sourceTree = "<group>"; };
 		7AEF8E371576EC65004D84EE /* Effect_Delay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect_Delay.h; sourceTree = "<group>"; };
 		7AEF8E381576EC65004D84EE /* Effect_Delay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effect_Delay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 			children = (
 				7A48154E1565E8E1000354D5 /* 147-song-with_keys.aif */,
 				7A4815601565EFDC000354D5 /* 147-song-mono.aif */,
+				7AA9C591157ABF8700AE5362 /* bluestest.aif */,
 				7A68609B157A9FFC0018A3DC /* cowbell.wav */,
 				38F72D041579AA4400FE590F /* bg2.png */,
 				217A37D9155B542400201779 /* AppDelegate.h */,
@@ -236,7 +239,6 @@
 				21D6E88D155C744E003B5254 /* SoundFile.m */,
 				7A68609D157AA0110018A3DC /* SoundFile_Cowbell.h */,
 				7A68609E157AA0110018A3DC /* SoundFile_Cowbell.m */,
-				217A37DD155B542400201779 /* ViewController.m */,
 				217A37DC155B542400201779 /* ViewController.h */,
 				217A37DD155B542400201779 /* ViewController.m */,
 				21D6E88E155C744E003B5254 /* ViewController_iPad.xib */,
@@ -363,6 +365,7 @@
 				7A4815611565EFDC000354D5 /* 147-song-mono.aif in Resources */,
 				38F72D051579AA4400FE590F /* bg2.png in Resources */,
 				7A68609C157A9FFC0018A3DC /* cowbell.wav in Resources */,
+				7AA9C592157ABF8700AE5362 /* bluestest.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

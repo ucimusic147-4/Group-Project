@@ -89,8 +89,9 @@
         /* update the envelope by one sample */
         [env update:1];
         
-		buffer_temp[i] = amp * 10 * env.output * s;
-        buffer_temp[i] = [self biQuad:buffer_temp[i]];
+        
+        buffer_temp[i] = amp * sin(theta * 2 * M_PI) * env.output;        
+        //buffer_temp[i] = [self biQuad:buffer_temp[i]];
 
         
 		theta += deltaTheta;

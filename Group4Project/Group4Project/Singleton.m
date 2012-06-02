@@ -16,6 +16,7 @@
 
 extern AQPlayer *aqp;
 
+
 @implementation Singleton
 
 -(id)init
@@ -76,6 +77,7 @@ extern AQPlayer *aqp;
     {
         flipover = NO;
         [(AQPlayer_SynthSF*)aqp changeVoices];
+
         NSLog(@"successful");
     }
     

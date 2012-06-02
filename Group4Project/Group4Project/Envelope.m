@@ -40,6 +40,7 @@
 -(void)on
 {
 	delta = delta_attack;
+
 }
 
 -(void)off

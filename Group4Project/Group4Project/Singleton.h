@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "AQPlayer.h"
+
 #import "Sequencer.h"
 
 #define kFilteringFactor 0.1

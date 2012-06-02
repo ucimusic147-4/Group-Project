@@ -33,6 +33,6 @@
 -(void)pause;
 -(void)play;
 -(BOOL)isPaused;
-
+-(void)swapSF:(UInt16)pos;
 
 @end

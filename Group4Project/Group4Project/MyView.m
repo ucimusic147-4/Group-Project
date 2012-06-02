@@ -53,21 +53,21 @@ extern Singleton* gSing;
         
         //set voice number based on current position in the y-direction
         if (pt.y<=57)
-            currentVoice=1;
-		if (pt.y>57 && pt.y<=114)
             currentVoice=2;
-		if (pt.y>114 && pt.y<=171)
-            currentVoice=3;
-		if (pt.y>171 && pt.y<=228)
+		if (pt.y>57 && pt.y<=114)
             currentVoice=4;
-		if (pt.y>228 && pt.y<=285)
-            currentVoice=5;
-		if (pt.y>285 && pt.y<=342)
+		if (pt.y>114 && pt.y<=171)
             currentVoice=6;
-		if (pt.y>342 && pt.y<=399)
-            currentVoice=7;
-		if (pt.y>399 && pt.y<=456)
+		if (pt.y>171 && pt.y<=228)
             currentVoice=8;
+		if (pt.y>228 && pt.y<=285)
+            currentVoice=10;
+		if (pt.y>285 && pt.y<=342)
+            currentVoice=12;
+		if (pt.y>342 && pt.y<=399)
+            currentVoice=14;
+		if (pt.y>399 && pt.y<=456)
+            currentVoice=16;
         [aqp voiceOn: currentVoice];
         pitchUp = NO;
         pitchDown = NO;

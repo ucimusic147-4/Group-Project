@@ -83,6 +83,7 @@
         /* update the envelope by one sample */
         [env update:1];
         
+//        buffer[i] += amp * sin(theta * 2 * M_PI) * env.output;        
 		buffer[i] += amp * env.output * s;
         
 		theta += deltaTheta;

@@ -13,10 +13,11 @@
 -(id)init
 {
 	self = [super init];
+    
 	
     /* get a path to the sound file */
     /* note that the file name and file extension are set here */
-	CFURLRef mSoundFileURLRef = CFBundleCopyResourceURL(CFBundleGetMainBundle(),CFSTR("147-song-mono"),CFSTR("aif"),NULL);
+	CFURLRef mSoundFileURLRef = CFBundleCopyResourceURL(CFBundleGetMainBundle(),CFSTR("bluestest"),CFSTR("aif"),NULL);
 
 	/* open the file and get the fileID */
 	OSStatus result = noErr;
@@ -25,6 +26,7 @@
 		NSLog(@"AudioFileOpenURL exception %ld",result);
 	
     [self play];
+
     
 	return self;
 }
@@ -36,6 +38,23 @@
 	result = AudioFileClose(fileID);
 	if (result != noErr)
 		NSLog(@"AudioFileClose %ld",result);	
+}
+
+-(void)swapSF:(UInt16)pos
+{
+    CFStringRef songs[2] = {CFSTR("147-song-mono"),CFSTR("bluestest")};
+    
+    CFURLRef mSoundFileURLRef = CFBundleCopyResourceURL(CFBundleGetMainBundle(),songs[pos],CFSTR("aif"),NULL);
+    
+    /* open the file and get the fileID */
+	OSStatus result = noErr;
+	result = AudioFileOpenURL(mSoundFileURLRef,kAudioFileReadPermission,0,&fileID);
+	if (result != noErr)
+		NSLog(@"AudioFileOpenURL exception %ld",result);
+	
+    [self play];
+
+
 }
 
 
@@ -67,7 +86,7 @@
         for (UInt32 buf_pos = 0; buf_pos < num_buf_samples; buf_pos++)
         {
             Float64 s = (SInt16)CFSwapInt16BigToHost(fileBuffer[buf_pos*1]);
-            buffer[buf_pos] += s / INT16_MAX;
+            buffer[buf_pos] += amp * s / INT16_MAX;
         }
     }
 }

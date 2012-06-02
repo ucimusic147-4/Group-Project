@@ -18,6 +18,14 @@
     /* member variables */
     Float64 theta;
     Float64 deltaTheta;
+    
+    Float64  range;
+    
+    SInt32 pos;
+    
+    int pitches[2][18];
+
+    
 }
 
 // methods
