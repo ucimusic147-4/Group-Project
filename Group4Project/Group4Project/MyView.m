@@ -20,7 +20,6 @@ extern Singleton* gSing;
 
 
 @implementation MyView
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -70,17 +69,6 @@ extern Singleton* gSing;
     {
         CGPoint pt = [t locationInView:self];
         
-		/*
-         if ((pt.x<=160)&&(pt.y<=115))
-         [aqp voiceOn:1];
-         if ((pt.x>160) && (pt.y<=115))
-         [aqp voiceOn:2];
-         if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
-         [aqp voiceOn:3];
-         if ((pt.x>160) && (pt.y>115 && pt.y<=230))
-         [aqp voiceOn:4];
-         */
-        
 		if (pt.y<=57)
             [aqp voiceOn:1];
 		if (pt.y>57 && pt.y<=114)
@@ -111,6 +99,9 @@ extern Singleton* gSing;
         CGPoint pt = [t locationInView:self];
         NSLog(@"%lf,%lf,%lf,%lf",pt.x,pt.y,self.bounds.size.width,self.bounds.size.height);
         NSLog(@"%lf,%lf",pt.x/self.bounds.size.width,pt.y/self.bounds.size.height);
+        
+        //add method: if touch is a certain percentage away from the center/starting position, change frequency slightly
+        
         [gSing touchX:pt.x/self.bounds.size.width];
     }
    // NSLog(@"%lf",event.timestamp);
@@ -122,18 +113,7 @@ extern Singleton* gSing;
     for (UITouch* t in touches)
     {
         CGPoint pt = [t locationInView:self];
-        
-        /*
-         if ((pt.x<=160)&&(pt.y<=115))
-         [aqp voiceOff:1];
-         if ((pt.x>160) && (pt.y<=115))
-         [aqp voiceOff:2];
-         if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
-         [aqp voiceOff:3];
-         if ((pt.x>160) && (pt.y>115 && pt.y<=230))
-         [aqp voiceOff:4];
-         */
-		
+
 		if (pt.y<=57)
             [aqp voiceOff:1];
 		if (pt.y>57 && pt.y<=114)
