@@ -8,6 +8,8 @@
 
 #import "AQPlayer.h"
 #import "SoundFile.h"
+#import "SoundFile_Cowbell.h"
+
 
 @interface AQPlayer_SynthSF : AQPlayer{
     

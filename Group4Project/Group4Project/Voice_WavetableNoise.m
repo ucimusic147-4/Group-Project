@@ -13,15 +13,24 @@
 
 @implementation Voice_WavetableNoise
 
+@synthesize env;
+
+
 -(id)init
 {
     self = [super init];
 
     amp = 0.;
     
-	env = [[Envelope alloc] init];
+    b = malloc(sizeof(biquad));
+    [self biQuad_set];    
+
+    
+	env = [[Envelope_Kick alloc] init];
 	env.attack = 0.05;
 	env.release = 0.05;    
+
+
     
     Float64 harmonics[24] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
     
@@ -80,10 +89,97 @@
         /* update the envelope by one sample */
         [env update:1];
         
-		buffer[i] += amp * env.output * s;
+		buffer_temp[i] = amp * 10 * env.output * s;
+        buffer_temp[i] = [self biQuad:buffer_temp[i]];
+
         
 		theta += deltaTheta;
 	}
+
+    
+    
+    
+    for (SInt32 i = 0; i < num_samples; i++)
+    {
+        buffer[i] += buffer_temp[i];
+
+    }
+    
+
+
+    
+}
+
+-(BOOL)isOn
+{
+    return env.output > 0.;
+}
+
+-(void)on
+{
+    [env on];
+}
+
+-(void)off
+{
+    [env off];
+}
+
+-(void) biQuad_set
+{
+    Float64 A, omega, sn, cs, alpha, beta;
+    Float64 a0, a1, a2, b0, b1, b2;
+    
+    ffreq = 500.;
+    dbGain = 0.;
+    
+    /* setup variables */
+    A = pow(10, dbGain /40);
+    omega = 2 * M_PI * ffreq /kSR;
+    sn = sin(omega);
+    cs = cos(omega);
+    alpha = sn * sinh(M_LN2 /2 * 1 * omega /sn);
+    beta = sqrt(A + A);
+    
+
+            b0 = (1 - cs) /2;
+            b1 = 1 - cs;
+            b2 = (1 - cs) /2;
+            a0 = 1 + alpha;
+            a1 = -2 * cs;
+            a2 = 1 - alpha;
+    
+    /* precompute the coefficients */
+    b->a0 = b0 /a0;
+    b->a1 = b1 /a0;
+    b->a2 = b2 /a0;
+    b->a3 = a1 /a0;
+    b->a4 = a2 /a0;
+    
+    /* zero initial samples */
+    b->x1 = b->x2 = 0;
+    b->y1 = b->y2 = 0;
+}
+
+/* Below this would be biquad.c */
+/* Computes a BiQuad filter on a sample */
+-(smp_type) biQuad:(smp_type)sample
+{
+    smp_type result;
+    
+    /* compute result */
+    result = b->a0 * sample + b->a1 * b->x1 + b->a2 * b->x2 -
+    b->a3 * b->y1 - b->a4 * b->y2;
+    
+    /* shift x1 to x2, sample to x1 */
+    b->x2 = b->x1;
+    b->x1 = sample;
+    
+    /* shift y1 to y2, result to y1 */
+    b->y2 = b->y1;
+    b->y1 = result;
+    
+    return result;
 }
 
 @end

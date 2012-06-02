@@ -12,6 +12,9 @@
 
 @implementation Voice_Wavetable
 
+@synthesize env;
+
+
 -(id)init
 {
     self = [super init];
@@ -86,5 +89,20 @@
 	}
 }
 
+
+-(BOOL)isOn
+{
+    return env.output > 0.;
+}
+
+-(void)on
+{
+    [env on];
+}
+
+-(void)off
+{
+    [env off];
+}
 
 @end

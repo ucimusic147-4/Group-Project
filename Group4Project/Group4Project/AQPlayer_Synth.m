@@ -11,7 +11,6 @@
 #import "Voice_Sine.h"
 #import "Voice_Wavetable.h"
 
-#import "Effect_Biquad.h"
 #import "Effect_Limiter.h"
 #import "Effect_Delay.h"
 
@@ -31,8 +30,6 @@
         ((Voice_Synth*)voices[i]).freq = [Voice_Synth noteNumToFreq:pitches[i]];
     }
 
-    effect[0] = [[Effect_Biquad alloc] init];
-    [((Effect_Biquad*)effect[0]) biQuad_set:LPF:0.:5000.:kSR:1.0];
     
     effect[1] = [[Effect_Delay alloc] init];
     ((Effect_Delay*)effect[1]).delayTime = 1.75;    /* this must be less than kMaxDelayTime */
@@ -50,9 +47,9 @@
         if (voices[i] != nil)
             [voices[i] fillSampleBuffer:buffer:num_samples];
     
-    for (SInt32 i = 0; i < kNumberEffects; i++)
-        if (effect[i] != nil)
-            [effect[i] process:buffer:num_samples];
+   // for (SInt32 i = 0; i < kNumberEffects; i++)
+     //   if (effect[i] != nil)
+       //     [effect[i] process:buffer:num_samples];
 }
 
 -(void)filterFreq:(Float64)freq

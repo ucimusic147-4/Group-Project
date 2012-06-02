@@ -11,7 +11,6 @@
 @implementation Voice
 
 @synthesize amp;
-@synthesize env;
 
 -(id)init
 {
@@ -26,19 +25,19 @@
 {
 }
 
+
 -(BOOL)isOn
 {
-    return env.output > 0.;
+    return NO;
 }
 
 -(void)on
 {
-    [env on];
 }
 
 -(void)off
 {
-    [env off];
 }
+
 
 @end

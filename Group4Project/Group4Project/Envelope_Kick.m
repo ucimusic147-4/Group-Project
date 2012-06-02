@@ -39,6 +39,7 @@
 -(void)on
 {
 	delta = delta_attack;
+    [self performSelector:@selector(off)  withObject:nil afterDelay:0.06];
 }
 
 -(void)off
