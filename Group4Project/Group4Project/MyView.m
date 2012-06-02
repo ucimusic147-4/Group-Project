@@ -70,14 +70,33 @@ extern Singleton* gSing;
     {
         CGPoint pt = [t locationInView:self];
         
-        if ((pt.x<=160)&&(pt.y<=115))
+		/*
+         if ((pt.x<=160)&&(pt.y<=115))
+         [aqp voiceOn:1];
+         if ((pt.x>160) && (pt.y<=115))
+         [aqp voiceOn:2];
+         if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
+         [aqp voiceOn:3];
+         if ((pt.x>160) && (pt.y>115 && pt.y<=230))
+         [aqp voiceOn:4];
+         */
+        
+		if (pt.y<=57)
             [aqp voiceOn:1];
-        if ((pt.x>160) && (pt.y<=115))
+		if (pt.y>57 && pt.y<=114)
             [aqp voiceOn:2];
-        if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
+		if (pt.y>114 && pt.y<=171)
             [aqp voiceOn:3];
-        if ((pt.x>160) && (pt.y>115 && pt.y<=230))
+		if (pt.y>171 && pt.y<=228)
             [aqp voiceOn:4];
+		if (pt.y>228 && pt.y<=285)
+            [aqp voiceOn:5];
+		if (pt.y>285 && pt.y<=342)
+            [aqp voiceOn:6];
+		if (pt.y>342 && pt.y<=399)
+            [aqp voiceOn:7];
+		if (pt.y>399 && pt.y<=456)
+            [aqp voiceOn:8];
         
         NSLog(@"%lf,%lf",pt.x,pt.y);
     }
@@ -104,14 +123,33 @@ extern Singleton* gSing;
     {
         CGPoint pt = [t locationInView:self];
         
-        if ((pt.x<=160)&&(pt.y<=115))
+        /*
+         if ((pt.x<=160)&&(pt.y<=115))
+         [aqp voiceOff:1];
+         if ((pt.x>160) && (pt.y<=115))
+         [aqp voiceOff:2];
+         if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
+         [aqp voiceOff:3];
+         if ((pt.x>160) && (pt.y>115 && pt.y<=230))
+         [aqp voiceOff:4];
+         */
+		
+		if (pt.y<=57)
             [aqp voiceOff:1];
-        if ((pt.x>160) && (pt.y<=115))
+		if (pt.y>57 && pt.y<=114)
             [aqp voiceOff:2];
-        if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
+		if (pt.y>114 && pt.y<=171)
             [aqp voiceOff:3];
-        if ((pt.x>160) && (pt.y>115 && pt.y<=230))
+		if (pt.y>171 && pt.y<=228)
             [aqp voiceOff:4];
+		if (pt.y>228 && pt.y<=285)
+            [aqp voiceOff:5];
+		if (pt.y>285 && pt.y<=342)
+            [aqp voiceOff:6];
+		if (pt.y>342 && pt.y<=399)
+            [aqp voiceOff:7];
+		if (pt.y>399 && pt.y<=456)
+            [aqp voiceOff:8];
         
         NSLog(@"%lf,%lf",pt.x,pt.y);
        // [aqp voiceToggle:1];
