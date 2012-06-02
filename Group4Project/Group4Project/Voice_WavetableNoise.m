@@ -1,40 +1,41 @@
 //
-//  Voice_Wavetable.m
+//  Voice_WavetableNoise.m
 //  Group4Project
 //
-//  Created by Lab User on 5/16/12.
+//  Created by Lab User on 6/2/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Voice_Wavetable.h"
+#import "Voice_WavetableNoise.h"
 
 #import "AQplayer.h"
 
-@implementation Voice_Wavetable
+
+@implementation Voice_WavetableNoise
 
 -(id)init
 {
     self = [super init];
-    
+
     amp = 0.;
     
 	env = [[Envelope alloc] init];
-	env.attack = 0.07;
-	env.release = 0.2;
+	env.attack = 0.05;
+	env.release = 0.05;    
     
-    Float64 harmonics[24] = {0.7532,0.3546,0.1916,0.096,0.0968,0.0352,0.0034,0.0236,0.0111,0.0070,0.0070,0.0059,0.0055,0.0074,0.0059,0.0035,0.0026,0.0023,0.0023,0.0025,0.0009,0.0008,0.0008,0.0007};
-     
-      
+    Float64 harmonics[24] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    
+    
     /* for each harmonic (outer loop) */
     for (UInt16 k = 1; k <= 24; k++)
     {
         
         /* add to the wavetable the harmonic, a sinusoid that is an integer multiple of the fundamental frequency (inner loop) */
-            for (UInt16 i = 0; i < kWaveTableSize; i++)
-            {
-                const Float64 t = (Float64)i / kWaveTableSize * k;
-                table[i] += sin(t * 2 * M_PI) * harmonics[k-1];
-            }
+        for (UInt16 i = 0; i < kWaveTableSize; i++)
+        {
+            const Float64 t = (Float64)i / kWaveTableSize * k;
+            table[i] += sin(t * 2 * M_PI) * harmonics[k-1];
+        }
     }   
     
     /* find maximum value in table */
@@ -50,12 +51,11 @@
     for (UInt16 i = 0; i < kWaveTableSize; i++)
     {
         table[i] = table[i] / max;
-       // NSLog(@"%d %f",i,table[i]);
+        // NSLog(@"%d %f",i,table[i]);
     }
     
     return self;
 }
-
 
 -(void)fillSampleBuffer:(Float64*)buffer:(UInt32)num_samples
 {
@@ -85,6 +85,5 @@
 		theta += deltaTheta;
 	}
 }
-
 
 @end

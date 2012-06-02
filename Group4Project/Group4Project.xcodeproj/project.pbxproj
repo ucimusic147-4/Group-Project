@@ -44,6 +44,8 @@
 		7A48154F1565E8E1000354D5 /* 147-song-with_keys.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7A48154E1565E8E1000354D5 /* 147-song-with_keys.aif */; };
 		7A4815611565EFDC000354D5 /* 147-song-mono.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7A4815601565EFDC000354D5 /* 147-song-mono.aif */; };
 		7A650B1F1564767600FE0CFB /* Voice_Wavetable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A650B1E1564767600FE0CFB /* Voice_Wavetable.m */; };
+		7A686096157A90D50018A3DC /* Voice_WavetableNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A686095157A90D50018A3DC /* Voice_WavetableNoise.m */; };
+		7A68609A157A93DB0018A3DC /* Envelope_Kick.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A686099157A93DB0018A3DC /* Envelope_Kick.m */; };
 		7AEF8E391576EC65004D84EE /* Effect_Delay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF8E381576EC65004D84EE /* Effect_Delay.m */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +122,10 @@
 		7A4815601565EFDC000354D5 /* 147-song-mono.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "147-song-mono.aif"; sourceTree = "<group>"; };
 		7A650B1D1564767600FE0CFB /* Voice_Wavetable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Wavetable.h; sourceTree = "<group>"; };
 		7A650B1E1564767600FE0CFB /* Voice_Wavetable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Wavetable.m; sourceTree = "<group>"; };
+		7A686094157A90D50018A3DC /* Voice_WavetableNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_WavetableNoise.h; sourceTree = "<group>"; };
+		7A686095157A90D50018A3DC /* Voice_WavetableNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_WavetableNoise.m; sourceTree = "<group>"; };
+		7A686098157A93DB0018A3DC /* Envelope_Kick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Envelope_Kick.h; sourceTree = "<group>"; };
+		7A686099157A93DB0018A3DC /* Envelope_Kick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Envelope_Kick.m; sourceTree = "<group>"; };
 		7AEF8E371576EC65004D84EE /* Effect_Delay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect_Delay.h; sourceTree = "<group>"; };
 		7AEF8E381576EC65004D84EE /* Effect_Delay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effect_Delay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +214,8 @@
 				7AEF8E381576EC65004D84EE /* Effect_Delay.m */,
 				7A11273A156D9C0200A1BFD5 /* Envelope.h */,
 				7A11273B156D9C0200A1BFD5 /* Envelope.m */,
+				7A686098157A93DB0018A3DC /* Envelope_Kick.h */,
+				7A686099157A93DB0018A3DC /* Envelope_Kick.m */,
 				21D6E882155C744E003B5254 /* MyView.h */,
 				21D6E883155C744E003B5254 /* MyView.m */,
 				21D6E884155C744E003B5254 /* Note.h */,
@@ -227,9 +235,11 @@
 				21D6E89A155C74B2003B5254 /* Voice_Sine.h */,
 				21D6E89B155C74B2003B5254 /* Voice_Sine.m */,
 				21D6E89C155C74B2003B5254 /* Voice_Synth.h */,
+				21D6E89D155C74B2003B5254 /* Voice_Synth.m */,
 				7A650B1D1564767600FE0CFB /* Voice_Wavetable.h */,
 				7A650B1E1564767600FE0CFB /* Voice_Wavetable.m */,
-				21D6E89D155C74B2003B5254 /* Voice_Synth.m */,
+				7A686094157A90D50018A3DC /* Voice_WavetableNoise.h */,
+				7A686095157A90D50018A3DC /* Voice_WavetableNoise.m */,
 				21D6E89E155C74B2003B5254 /* Voice.h */,
 				21D6E89F155C74B2003B5254 /* Voice.m */,
 				217A37D1155B542400201779 /* Supporting Files */,
@@ -400,6 +410,8 @@
 				7A112740156D9C0200A1BFD5 /* Envelope.m in Sources */,
 				7A20D5E1156DC1F90054ADD2 /* AQPlayer_SynthSF.m in Sources */,
 				7AEF8E391576EC65004D84EE /* Effect_Delay.m in Sources */,
+				7A686096157A90D50018A3DC /* Voice_WavetableNoise.m in Sources */,
+				7A68609A157A93DB0018A3DC /* Envelope_Kick.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,11 +17,7 @@
 {
     self = [super init];
     
-    amp = 0.;
-    
-	env = [[Envelope alloc] init];
-	env.attack = 0.07;
-	env.release = 0.2;
+
     
     return self;
 }
