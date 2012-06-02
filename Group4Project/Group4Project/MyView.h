@@ -11,13 +11,14 @@
 #import <UIKit/UIKit.h>
 
 @interface MyView : UIView {
-    
+    SInt32 currentVoice;
+    BOOL touchEnd;
+    BOOL pitchUp;
+    BOOL pitchDown;
+    CGFloat originalPosition;
 }
 
 -(IBAction)playToggle:(id)sender;
--(IBAction)toggleVoice1:(id)sender;
--(IBAction)toggleVoice2:(id)sender;
--(IBAction)toggleVoice3:(id)sender;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
