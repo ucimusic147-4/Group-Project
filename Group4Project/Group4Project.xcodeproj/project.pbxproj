@@ -238,6 +238,7 @@
 				7A68609E157AA0110018A3DC /* SoundFile_Cowbell.m */,
 				217A37DD155B542400201779 /* ViewController.m */,
 				217A37DC155B542400201779 /* ViewController.h */,
+				217A37DD155B542400201779 /* ViewController.m */,
 				21D6E88E155C744E003B5254 /* ViewController_iPad.xib */,
 				21D6E88F155C744E003B5254 /* ViewController_iPhone.xib */,
 				21D6E89A155C74B2003B5254 /* Voice_Sine.h */,

@@ -19,7 +19,9 @@
     
     Sequencer*  q;
     
+    // variables for accelerometer
     BOOL flipover;
+    BOOL rotate;
 
     // creating basic filter object    
     BOOL adaptive;

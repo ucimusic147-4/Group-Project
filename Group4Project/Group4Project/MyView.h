@@ -11,32 +11,18 @@
 #import <UIKit/UIKit.h>
 
 @interface MyView : UIView {
-    
+    SInt32 currentVoice;
+    BOOL touchEnd;
+    BOOL pitchUp;
+    BOOL pitchDown;
+    CGFloat originalPosition;
 }
 
 -(IBAction)playToggle:(id)sender;
--(IBAction)toggleVoice1:(id)sender;
--(IBAction)toggleVoice2:(id)sender;
--(IBAction)toggleVoice3:(id)sender;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
-
-/* accelerometer becoming first responder
-
-- (BOOL)canBecomeFirstResponder;
-- (void)viewDidAppear:(BOOL)animated;
-
-// accelerometer functions
-
-- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event;
-
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event;
-
-- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event;
-
-*/  
 
 @end

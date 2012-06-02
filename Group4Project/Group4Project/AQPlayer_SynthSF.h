@@ -21,6 +21,7 @@
 }
 
 // methods
+
 -(void)fillAudioBuffer:(Float64*)buffer:(UInt32)num_samples;
 
 -(void)filterFreq:(Float64)freq;

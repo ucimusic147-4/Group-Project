@@ -20,7 +20,6 @@ extern Singleton* gSing;
 
 
 @implementation MyView
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -45,24 +44,6 @@ extern Singleton* gSing;
     [gSing playToggle];
 }
 
--(IBAction)toggleVoice1:(id)sender
-{
-    NSLog(@"toggleVoice1");
-  //  [aqp voiceToggle:1];
-}
-
--(IBAction)toggleVoice2:(id)sender
-{
-    NSLog(@"toggleVoice2");
-  //  [aqp voiceToggle:2];
-}
-
--(IBAction)toggleVoice3:(id)sender
-{
-    NSLog(@"toggleVoice3");
-   // [aqp voiceToggle:3];
-}
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"%d",touches.count);
@@ -70,37 +51,30 @@ extern Singleton* gSing;
     {
         CGPoint pt = [t locationInView:self];
         
-		/*
-         if ((pt.x<=160)&&(pt.y<=115))
-         [aqp voiceOn:1];
-         if ((pt.x>160) && (pt.y<=115))
-         [aqp voiceOn:2];
-         if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
-         [aqp voiceOn:3];
-         if ((pt.x>160) && (pt.y>115 && pt.y<=230))
-         [aqp voiceOn:4];
-         */
-        
-		if (pt.y<=57)
-            [aqp voiceOn:1];
+        //set voice number based on current position in the y-direction
+        if (pt.y<=57)
+            currentVoice=1;
 		if (pt.y>57 && pt.y<=114)
-            [aqp voiceOn:2];
+            currentVoice=2;
 		if (pt.y>114 && pt.y<=171)
-            [aqp voiceOn:3];
+            currentVoice=3;
 		if (pt.y>171 && pt.y<=228)
-            [aqp voiceOn:4];
+            currentVoice=4;
 		if (pt.y>228 && pt.y<=285)
-            [aqp voiceOn:5];
+            currentVoice=5;
 		if (pt.y>285 && pt.y<=342)
-            [aqp voiceOn:6];
+            currentVoice=6;
 		if (pt.y>342 && pt.y<=399)
-            [aqp voiceOn:7];
+            currentVoice=7;
 		if (pt.y>399 && pt.y<=456)
-            [aqp voiceOn:8];
-        
+            currentVoice=8;
+        [aqp voiceOn: currentVoice];
+        pitchUp = NO;
+        pitchDown = NO;
+        touchEnd = NO;
+        originalPosition = pt.x;
         NSLog(@"%lf,%lf",pt.x,pt.y);
     }
-    //NSLog(@"%lf",event.timestamp);
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -111,82 +85,46 @@ extern Singleton* gSing;
         CGPoint pt = [t locationInView:self];
         NSLog(@"%lf,%lf,%lf,%lf",pt.x,pt.y,self.bounds.size.width,self.bounds.size.height);
         NSLog(@"%lf,%lf",pt.x/self.bounds.size.width,pt.y/self.bounds.size.height);
-        [gSing touchX:pt.x/self.bounds.size.width];
+        NSLog(@"OP: %lf, OP: %lf",pt.x,originalPosition);
+        
+
+        //bend pitch up or down when user slides finger right or left
+        if(pitchUp==NO && pt.x>=originalPosition+20.0)
+        {
+                
+            [aqp voiceOff:currentVoice];
+            [aqp voiceOn:++currentVoice];
+            NSLog(@"NEW VOICE ON");
+            pitchUp = YES;
+            pitchDown = NO;
+        }
+        
+        if(pitchDown==NO && pt.x<=originalPosition-20.0)
+        {
+            
+            [aqp voiceOff:currentVoice];
+            [aqp voiceOn:--currentVoice];
+            NSLog(@"NEW VOICE ON");
+            pitchDown = YES;
+            pitchUp = NO;
+        }
+        
+        //[gSing touchX:pt.x/self.bounds.size.width];
     }
-   // NSLog(@"%lf",event.timestamp);
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"%d",touches.count);
-    for (UITouch* t in touches)
-    {
-        CGPoint pt = [t locationInView:self];
-        
-        /*
-         if ((pt.x<=160)&&(pt.y<=115))
-         [aqp voiceOff:1];
-         if ((pt.x>160) && (pt.y<=115))
-         [aqp voiceOff:2];
-         if ((pt.x<=160) && (pt.y>115 && pt.y<=230))
-         [aqp voiceOff:3];
-         if ((pt.x>160) && (pt.y>115 && pt.y<=230))
-         [aqp voiceOff:4];
-         */
-		
-		if (pt.y<=57)
-            [aqp voiceOff:1];
-		if (pt.y>57 && pt.y<=114)
-            [aqp voiceOff:2];
-		if (pt.y>114 && pt.y<=171)
-            [aqp voiceOff:3];
-		if (pt.y>171 && pt.y<=228)
-            [aqp voiceOff:4];
-		if (pt.y>228 && pt.y<=285)
-            [aqp voiceOff:5];
-		if (pt.y>285 && pt.y<=342)
-            [aqp voiceOff:6];
-		if (pt.y>342 && pt.y<=399)
-            [aqp voiceOff:7];
-		if (pt.y>399 && pt.y<=456)
-            [aqp voiceOff:8];
-        
-        NSLog(@"%lf,%lf",pt.x,pt.y);
-       // [aqp voiceToggle:1];
-
-    }
-    NSLog(@"%lf",event.timestamp);
+    //originally duplicated code from touchesBegan, but this caused errors in turning off the voice
+    [aqp voiceOff:currentVoice];
+    touchEnd=YES;
+    
+    NSLog(@"Voice off at %lf",event.timestamp);
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
 }
 
-/* accelerometer becoming first responder
-
-- (BOOL)canBecomeFirstResponder {
-    return YES;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [self becomeFirstResponder];
-}
-
-// accelerometer functions
-
-- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
-{
-    
-}
-
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
-{
-}
-
-- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
-{
-}
-
-*/
 
 @end
