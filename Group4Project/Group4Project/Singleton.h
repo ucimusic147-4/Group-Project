@@ -33,27 +33,5 @@
 
 -(void)playToggle;
 
-/*
--(void)addAcceleration:(UIAcceleration*)accel;
-
-@property(nonatomic, readonly) UIAccelerationValue x;
-@property(nonatomic, readonly) UIAccelerationValue y;
-@property(nonatomic, readonly) UIAccelerationValue z;
-
-@property(nonatomic, getter=isAdaptive) BOOL adaptive;
-@property(nonatomic, readonly) NSString *name;
-
-@end
-
-// A filter class to represent a lowpass filter
-@interface LowpassFilter : Singleton
-{
-	double filterConstant;
-	UIAccelerationValue lastX, lastY, lastZ;
-}
-
--(id)initWithSampleRate:(double)rate cutoffFrequency:(double)freq;
-*/
-
 
 @end
