@@ -19,6 +19,7 @@
     
     Sequencer*  q;
     
+    BOOL flipover;
 
     // creating basic filter object    
     BOOL adaptive;
