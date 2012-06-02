@@ -136,13 +136,17 @@ double Clamp(double v, double min, double max)
     // Use the acceleration data.
     
     if (acceleration.z >= 0.6)
-    {   NSLog(@"device has turned over");
-        if (acceleration.z < -0.6)
-        {
-            // insert our function i.e. change instrument/song
-            NSLog(@"successful");
-        }
-        }
+    {
+        flipover = YES;
+        NSLog(@"device has turned over");
+    }
+    if (acceleration.z < -0.6 && flipover == YES)
+    {
+        flipover = NO;
+        [(AQPlayter_SynthSF*)aqp changeVoices];
+        NSLog(@"successful");
+    }
+    
     
     NSLog(@"%f %f %f",acceleration.x,acceleration.y,acceleration.z);
 }
