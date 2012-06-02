@@ -141,6 +141,7 @@ double Clamp(double v, double min, double max)
         {
             // insert our function i.e. change instrument/song
             NSLog(@"successful");
+            [(AQPlayer_SynthSF*)aqp changeVoices];
         }
         }
     
