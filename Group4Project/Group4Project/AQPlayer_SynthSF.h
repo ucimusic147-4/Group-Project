@@ -24,6 +24,6 @@
 -(void)filterFreq:(Float64)freq;
 
 -(void)playToggle;
-
+-(void)changeVoices;
 
 @end

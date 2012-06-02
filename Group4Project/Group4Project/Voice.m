@@ -21,7 +21,7 @@
     
 	env = [[Envelope alloc] init];
 	env.attack = 0.07;
-	env.release = 0.4;
+	env.release = 0.2;
     
     return self;
 }
