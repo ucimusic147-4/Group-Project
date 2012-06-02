@@ -24,19 +24,4 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
-/* accelerometer becoming first responder
-
-- (BOOL)canBecomeFirstResponder;
-- (void)viewDidAppear:(BOOL)animated;
-
-// accelerometer functions
-
-- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event;
-
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event;
-
-- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event;
-
-*/  
-
 @end

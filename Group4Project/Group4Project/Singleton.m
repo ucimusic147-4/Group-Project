@@ -14,6 +14,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern AQPlayer *aqp;
+
 @implementation Singleton
 
 -(id)init
@@ -63,6 +65,8 @@
     
     // Use the acceleration data.
     
+    
+    // change octaves/instrument/song when flipping over device
     if (acceleration.z >= 0.6)
     {
         flipover = YES;
@@ -73,6 +77,20 @@
         flipover = NO;
         [(AQPlayer_SynthSF*)aqp changeVoices];
         NSLog(@"successful");
+    }
+    
+    // play sound when rotating device <= 90 degrees
+    if (acceleration.y >= -0.6)
+    {
+        rotate = YES;
+        NSLog(@"device has rotated");
+    }
+    if (acceleration.y < -0.9 && rotate == YES)
+    {
+        rotate = NO;
+        [aqp voiceOn:1];
+        NSLog(@"ding!");
+        
     }
     
     
