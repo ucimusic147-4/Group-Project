@@ -25,6 +25,7 @@
     SInt32 pitches[5] = {0,60,64,67,72};
     
     voices[0] = sf;
+    voices[0].amp = 0.2;
     
     for (SInt32 i = 1; i < kNumberVoices; i++)
     {
