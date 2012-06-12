@@ -1,17 +1,17 @@
 //
-//  Voice_WavetableNoise.m
+//  Voice_Tom2.m
 //  Group4Project
 //
 //  Created by Lab User on 6/2/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Voice_WavetableNoise.h"
+#import "Voice_Tom2.h"
 
 #import "AQplayer.h"
 
 
-@implementation Voice_WavetableNoise
+@implementation Voice_Tom2
 
 @synthesize env;
 
@@ -22,18 +22,19 @@
 
     amp = 0.;
     
-    b = malloc(sizeof(biquad));
+    b = malloc(sizeof(biquadH));
     [self biQuad_set];    
 
     
 	env = [[Envelope_Kick alloc] init];
-	env.attack = 0.05;
-	env.release = 0.05;
+	env.attack = 0.001;
+	env.release = 0.002;    
+//    env.sustain = 0.0622;
     env.sustain = 0.1;
 
 
     
-    Float64 harmonics[24] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    Float64 harmonics[24] = {0.0092, 0.0156, 0.0009, 0.019, 0.0038, 0.0041, 0.0028, 0.0306, 0.0096, 0.0083, 0.0205, 0.035, 0.0086, 0.0225, 0.0017, 0.0294, 0.0217, 0.0293, 0.0388, 0.0134, 0.0017, 0.0125, 0.0149, 0.0538};
     
     
     /* for each harmonic (outer loop) */
@@ -69,7 +70,7 @@
 
 -(void)fillSampleBuffer:(Float64*)buffer:(UInt32)num_samples
 {
-    deltaTheta = freq / kSR;
+    deltaTheta = 220.0 / kSR;
     
 	for (SInt32 i = 0; i < num_samples; i++)
 	{
@@ -91,8 +92,8 @@
         [env update:1];
         
         
-        buffer_temp[i] = amp * sin(theta * 2 * M_PI) * env.output;        
-        //buffer_temp[i] = [self biQuad:buffer_temp[i]];
+        buffer_temp[i] = amp * s * env.output;        
+        //buffer_temp[i] = [self biQuadH:buffer_temp[i]];
 
         
 		theta += deltaTheta;
@@ -132,24 +133,26 @@
     Float64 A, omega, sn, cs, alpha, beta;
     Float64 a0, a1, a2, b0, b1, b2;
     
-    ffreq = 500.;
-    dbGain = 0.;
+    ffreq = 168.;
+    dbGain = 24.0;
+    bandwidth = 0.1;
     
     /* setup variables */
     A = pow(10, dbGain /40);
     omega = 2 * M_PI * ffreq /kSR;
     sn = sin(omega);
     cs = cos(omega);
-    alpha = sn * sinh(M_LN2 /2 * 1 * omega /sn);
+    alpha = sn * sinh(M_LN2 /2 * bandwidth * omega /sn);
     beta = sqrt(A + A);
     
 
-            b0 = (1 - cs) /2;
-            b1 = 1 - cs;
-            b2 = (1 - cs) /2;
-            a0 = 1 + alpha;
-            a1 = -2 * cs;
-            a2 = 1 - alpha;
+    //BPF
+    b0 = alpha;
+    b1 = 0;
+    b2 = -alpha;
+    a0 = 1 + alpha;
+    a1 = -2 * cs;
+    a2 = 1 - alpha;
     
     /* precompute the coefficients */
     b->a0 = b0 /a0;
@@ -165,9 +168,9 @@
 
 /* Below this would be biquad.c */
 /* Computes a BiQuad filter on a sample */
--(smp_type) biQuad:(smp_type)sample
+-(smp_typeH) biQuadH:(smp_typeH)sample
 {
-    smp_type result;
+    smp_typeH result;
     
     /* compute result */
     result = b->a0 * sample + b->a1 * b->x1 + b->a2 * b->x2 -

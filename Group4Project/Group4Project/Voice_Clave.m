@@ -1,17 +1,17 @@
 //
-//  Voice_WavetableNoise.m
+//  Voice_Clave.m
 //  Group4Project
 //
 //  Created by Lab User on 6/2/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Voice_WavetableNoise.h"
+#import "Voice_Clave.h"
 
 #import "AQplayer.h"
 
 
-@implementation Voice_WavetableNoise
+@implementation Voice_Clave
 
 @synthesize env;
 
@@ -22,16 +22,15 @@
 
     amp = 0.;
     
-    b = malloc(sizeof(biquad));
+    b = malloc(sizeof(biquadA));
     [self biQuad_set];    
 
     
 	env = [[Envelope_Kick alloc] init];
-	env.attack = 0.05;
-	env.release = 0.05;
+	env.attack = 0.001;
+	env.release = 0.0264;    
+//    env.sustain = 0.002;
     env.sustain = 0.1;
-
-
     
     Float64 harmonics[24] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
     
@@ -69,7 +68,7 @@
 
 -(void)fillSampleBuffer:(Float64*)buffer:(UInt32)num_samples
 {
-    deltaTheta = freq / kSR;
+    deltaTheta = 2637.0 / kSR;
     
 	for (SInt32 i = 0; i < num_samples; i++)
 	{
@@ -91,8 +90,8 @@
         [env update:1];
         
         
-        buffer_temp[i] = amp * sin(theta * 2 * M_PI) * env.output;        
-        //buffer_temp[i] = [self biQuad:buffer_temp[i]];
+        buffer_temp[i] = amp * s * env.output;        
+        //buffer_temp[i] = [self biQuadA:buffer_temp[i]];
 
         
 		theta += deltaTheta;
@@ -134,13 +133,14 @@
     
     ffreq = 500.;
     dbGain = 0.;
+    bandwidth = 1.0;
     
     /* setup variables */
     A = pow(10, dbGain /40);
     omega = 2 * M_PI * ffreq /kSR;
     sn = sin(omega);
     cs = cos(omega);
-    alpha = sn * sinh(M_LN2 /2 * 1 * omega /sn);
+    alpha = sn * sinh(M_LN2 /2 * bandwidth * omega /sn);
     beta = sqrt(A + A);
     
 
@@ -165,9 +165,9 @@
 
 /* Below this would be biquad.c */
 /* Computes a BiQuad filter on a sample */
--(smp_type) biQuad:(smp_type)sample
+-(smp_typeA) biQuadA:(smp_typeA)sample
 {
-    smp_type result;
+    smp_typeA result;
     
     /* compute result */
     result = b->a0 * sample + b->a1 * b->x1 + b->a2 * b->x2 -

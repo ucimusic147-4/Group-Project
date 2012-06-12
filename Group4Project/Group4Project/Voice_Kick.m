@@ -1,17 +1,17 @@
 //
-//  Voice_WavetableNoise.m
+//  Voice_Kick.m
 //  Group4Project
 //
 //  Created by Lab User on 6/2/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Voice_WavetableNoise.h"
+#import "Voice_Kick.h"
 
 #import "AQplayer.h"
 
 
-@implementation Voice_WavetableNoise
+@implementation Voice_Kick
 
 @synthesize env;
 
@@ -22,18 +22,19 @@
 
     amp = 0.;
     
-    b = malloc(sizeof(biquad));
+    b = malloc(sizeof(biquadC));
     [self biQuad_set];    
 
     
 	env = [[Envelope_Kick alloc] init];
-	env.attack = 0.05;
-	env.release = 0.05;
+	env.attack = 0.0046;
+	env.release = 0.2392;    
+ //   env.sustain = 0.005;
     env.sustain = 0.1;
 
 
     
-    Float64 harmonics[24] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    Float64 harmonics[24] = {0.8105, 0.0, 0.0897, 0.0, 0.0313, 0.0, 0.0147, 0.0, 0.0076, 0.0, 0.0041, 0.0, 0.0023, 0.0, 0.0014, 0.0, 0.0009, 0.0, 0.0006, 0.0, 0.0, 0.0, 0.0, 0.0};
     
     
     /* for each harmonic (outer loop) */
@@ -69,7 +70,7 @@
 
 -(void)fillSampleBuffer:(Float64*)buffer:(UInt32)num_samples
 {
-    deltaTheta = freq / kSR;
+    deltaTheta = 300.0 / kSR;
     
 	for (SInt32 i = 0; i < num_samples; i++)
 	{
@@ -91,8 +92,8 @@
         [env update:1];
         
         
-        buffer_temp[i] = amp * sin(theta * 2 * M_PI) * env.output;        
-        //buffer_temp[i] = [self biQuad:buffer_temp[i]];
+        buffer_temp[i] = amp * s * env.output;        
+        //buffer_temp[i] = [self biQuadC:buffer_temp[i]];
 
         
 		theta += deltaTheta;
@@ -132,18 +133,19 @@
     Float64 A, omega, sn, cs, alpha, beta;
     Float64 a0, a1, a2, b0, b1, b2;
     
-    ffreq = 500.;
-    dbGain = 0.;
+    ffreq = 9122.0;
+    dbGain = -6.0;
+    bandwidth = 1.0;
     
     /* setup variables */
     A = pow(10, dbGain /40);
     omega = 2 * M_PI * ffreq /kSR;
     sn = sin(omega);
     cs = cos(omega);
-    alpha = sn * sinh(M_LN2 /2 * 1 * omega /sn);
+    alpha = sn * sinh(M_LN2 /2 * bandwidth * omega /sn);
     beta = sqrt(A + A);
     
-
+            //LPF
             b0 = (1 - cs) /2;
             b1 = 1 - cs;
             b2 = (1 - cs) /2;
@@ -165,9 +167,9 @@
 
 /* Below this would be biquad.c */
 /* Computes a BiQuad filter on a sample */
--(smp_type) biQuad:(smp_type)sample
+-(smp_typeC) biQuadC:(smp_typeC)sample
 {
-    smp_type result;
+    smp_typeC result;
     
     /* compute result */
     result = b->a0 * sample + b->a1 * b->x1 + b->a2 * b->x2 -

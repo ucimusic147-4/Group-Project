@@ -13,6 +13,7 @@
 
 @synthesize attack;
 @synthesize release;
+@synthesize sustain;
 
 @synthesize output;
 
@@ -39,7 +40,7 @@
 -(void)on
 {
 	delta = delta_attack;
-    [self performSelector:@selector(off)  withObject:nil afterDelay:0.1];
+    [self performSelector:@selector(off)  withObject:nil afterDelay:sustain];
 }
 
 -(void)off

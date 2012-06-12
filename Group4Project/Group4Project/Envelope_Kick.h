@@ -12,6 +12,7 @@
     
     Float64 attack;
     Float64 release;
+    Float64 sustain;
     
     Float64 delta_attack;
     Float64 delta_release;
@@ -23,6 +24,8 @@
 
 @property (nonatomic,readwrite) Float64 attack;
 @property (nonatomic,readwrite) Float64 release;
+@property (nonatomic,readwrite) Float64 sustain;
+
 
 @property (readonly) Float64 output;
 

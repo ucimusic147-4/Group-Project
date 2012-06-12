@@ -11,6 +11,16 @@
 #import "Voice_Sine.h"
 #import "Voice_Wavetable.h"
 #import "Voice_WavetableNoise.h"
+#import "Voice_Clave.h"
+#import "Voice_HiHat.h"
+#import "Voice_Kick.h"
+#import "Voice_Rim.h"
+#import "Voice_Snare.h"
+#import "Voice_Tick.h"
+#import "Voice_Tom.h"
+#import "Voice_Tom2.h"
+#import "Voice_Woodblock.h"
+
 
 #import "Effect_Limiter.h"
 
@@ -62,33 +72,54 @@
     pitches[1][16] = 80;
     pitches[1][17] = 81;
     /*
-    pitches[2][0] =  
-    pitches[2][1] =  
-    pitches[2][2] =  
-    pitches[2][3] =  
-    pitches[2][4] =  
-    pitches[2][5] =  
-    pitches[2][6] =  
-    pitches[2][7] =  
-    pitches[2][8] =  
-    pitches[2][9] =  
-    pitches[2][10] = 
-    pitches[2][11] = 
-    pitches[2][12] = 
-    pitches[2][13] = 
-    pitches[2][14] = 
-    pitches[2][15] = 
-    pitches[2][16] = 
-    pitches[2][17] = 
-     */
+    pitches[2][0] =  0;
+    pitches[2][1] =  60;
+    pitches[2][2] =  60;
+    pitches[2][3] =  60;
+    pitches[2][4] =  60;
+    pitches[2][5] =  60;
+    pitches[2][6] =  60;
+    pitches[2][7] =  60;
+    pitches[2][8] =  60;
+    pitches[2][9] =  60;
+    pitches[2][10] = 60;
+    pitches[2][11] = 60;
+    pitches[2][12] = 60;
+    pitches[2][13] = 60;
+    pitches[2][14] = 60;
+    pitches[2][15] = 60;
+    pitches[2][16] = 60;
+    pitches[2][17] = 60;
+    */
     
+    /*
+    voices[1] = [[Voice_Snare alloc] init];
+    voices[2] = [[Voice_Snare alloc] init];
+    voices[3] = [[Voice_Tick alloc] init];
+    voices[4] = [[Voice_Tick alloc] init];
+    voices[5] = [[Voice_Tom alloc] init];
+    voices[6] = [[Voice_Tom alloc] init];
+    voices[7] = [[Voice_Woodblock alloc] init];
+    voices[8] = [[Voice_Woodblock alloc] init];
+    voices[9] = [[Voice_Tom2 alloc] init];
+    voices[10] = [[Voice_HiHat alloc] init];
+    voices[11] = [[Voice_HiHat alloc] init];
+    voices[12] = [[Voice_Clave alloc] init];
+    voices[13] = [[Voice_Clave alloc] init];
+    voices[14] = [[Voice_Rim alloc] init];
+    voices[15] = [[Voice_Rim alloc] init];
+    voices[16] = [[Voice_Kick alloc] init];
+     voices[17] = [[Voice_Kick alloc] init];
+    */
     
-    for (SInt32 i = 1; i < kNumberVoices; i++)
+    for (SInt32 i = 2; i < kNumberVoices; i++)
     {
         voices[i] = [[Voice_WavetableNoise alloc] init];
         voices[i].amp = 0.5;
         ((Voice_Synth*)voices[i]).freq = [Voice_Synth noteNumToFreq:pitches[pos][i]];
     }
+    
+
     
     /* Old Multi-Voice Code
     
@@ -107,6 +138,10 @@
         ((Voice_Synth*)voices[(i*2)-1]).freq = [Voice_Synth noteNumToFreq:pitches[pos][(i*2)-1]];
     }
      */
+
+    voices[1] = [[Voice_Snare alloc] init];
+    voices[1].amp = 0.5;
+    ((Voice_Synth*)voices[1]).freq = [Voice_Synth noteNumToFreq:pitches[pos][1]];
     
     voices[0] = sf;
     voices[0].amp = 0.5;
@@ -124,7 +159,7 @@
      if (pos > 0) 
      {
      pos = 0;
-         for (SInt32 i = 1; i < kNumberVoices; i++)
+         for (SInt32 i = 2; i < kNumberVoices; i++)
          {
              voices[i] = [[Voice_Wavetable alloc] init];
              voices[i].amp = 1./((kNumberVoices/6));
@@ -135,7 +170,27 @@
      else
      {
      pos = 1;
-         for (SInt32 i = 1; i < kNumberVoices; i++)
+/*
+         voices[1] = [[Voice_Snare alloc] init];
+         voices[2] = [[Voice_Snare alloc] init];
+         voices[3] = [[Voice_Tick alloc] init];
+         voices[4] = [[Voice_Tick alloc] init];
+         voices[5] = [[Voice_Tom alloc] init];
+         voices[6] = [[Voice_Tom alloc] init];
+         voices[7] = [[Voice_Woodblock alloc] init];
+         voices[8] = [[Voice_Woodblock alloc] init];
+         voices[9] = [[Voice_Tom2 alloc] init];
+         voices[10] = [[Voice_HiHat alloc] init];
+         voices[11] = [[Voice_HiHat alloc] init];
+         voices[12] = [[Voice_Clave alloc] init];
+         voices[13] = [[Voice_Clave alloc] init];
+         voices[14] = [[Voice_Rim alloc] init];
+         voices[15] = [[Voice_Rim alloc] init];
+         voices[16] = [[Voice_Kick alloc] init];
+         voices[17] = [[Voice_Kick alloc] init];
+*/
+         
+         for (SInt32 i = 2; i < kNumberVoices; i++)
          {
              voices[i] = [[Voice_WavetableNoise alloc] init];
              voices[i].amp = 1./((kNumberVoices/6));

@@ -49,6 +49,15 @@
 		7A68609C157A9FFC0018A3DC /* cowbell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7A68609B157A9FFC0018A3DC /* cowbell.wav */; };
 		7A68609F157AA0110018A3DC /* SoundFile_Cowbell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A68609E157AA0110018A3DC /* SoundFile_Cowbell.m */; };
 		7AA9C592157ABF8700AE5362 /* bluestest.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7AA9C591157ABF8700AE5362 /* bluestest.aif */; };
+		7AB261C51587003700B178FC /* Voice_Clave.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB261B41587003600B178FC /* Voice_Clave.m */; };
+		7AB261C61587003700B178FC /* Voice_HiHat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB261B61587003600B178FC /* Voice_HiHat.m */; };
+		7AB261C71587003700B178FC /* Voice_Kick.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB261B81587003700B178FC /* Voice_Kick.m */; };
+		7AB261C81587003700B178FC /* Voice_Rim.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB261BA1587003700B178FC /* Voice_Rim.m */; };
+		7AB261C91587003700B178FC /* Voice_Snare.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB261BC1587003700B178FC /* Voice_Snare.m */; };
+		7AB261CA1587003700B178FC /* Voice_Tick.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB261BE1587003700B178FC /* Voice_Tick.m */; };
+		7AB261CB1587003700B178FC /* Voice_Tom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB261C01587003700B178FC /* Voice_Tom.m */; };
+		7AB261CC1587003700B178FC /* Voice_Tom2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB261C21587003700B178FC /* Voice_Tom2.m */; };
+		7AB261CD1587003700B178FC /* Voice_Woodblock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB261C41587003700B178FC /* Voice_Woodblock.m */; };
 		7AEF8E391576EC65004D84EE /* Effect_Delay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEF8E381576EC65004D84EE /* Effect_Delay.m */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +142,24 @@
 		7A68609D157AA0110018A3DC /* SoundFile_Cowbell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundFile_Cowbell.h; sourceTree = "<group>"; };
 		7A68609E157AA0110018A3DC /* SoundFile_Cowbell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundFile_Cowbell.m; sourceTree = "<group>"; };
 		7AA9C591157ABF8700AE5362 /* bluestest.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bluestest.aif; sourceTree = "<group>"; };
+		7AB261B31587003600B178FC /* Voice_Clave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Clave.h; sourceTree = "<group>"; };
+		7AB261B41587003600B178FC /* Voice_Clave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Clave.m; sourceTree = "<group>"; };
+		7AB261B51587003600B178FC /* Voice_HiHat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_HiHat.h; sourceTree = "<group>"; };
+		7AB261B61587003600B178FC /* Voice_HiHat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_HiHat.m; sourceTree = "<group>"; };
+		7AB261B71587003600B178FC /* Voice_Kick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Kick.h; sourceTree = "<group>"; };
+		7AB261B81587003700B178FC /* Voice_Kick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Kick.m; sourceTree = "<group>"; };
+		7AB261B91587003700B178FC /* Voice_Rim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Rim.h; sourceTree = "<group>"; };
+		7AB261BA1587003700B178FC /* Voice_Rim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Rim.m; sourceTree = "<group>"; };
+		7AB261BB1587003700B178FC /* Voice_Snare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Snare.h; sourceTree = "<group>"; };
+		7AB261BC1587003700B178FC /* Voice_Snare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Snare.m; sourceTree = "<group>"; };
+		7AB261BD1587003700B178FC /* Voice_Tick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Tick.h; sourceTree = "<group>"; };
+		7AB261BE1587003700B178FC /* Voice_Tick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Tick.m; sourceTree = "<group>"; };
+		7AB261BF1587003700B178FC /* Voice_Tom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Tom.h; sourceTree = "<group>"; };
+		7AB261C01587003700B178FC /* Voice_Tom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Tom.m; sourceTree = "<group>"; };
+		7AB261C11587003700B178FC /* Voice_Tom2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Tom2.h; sourceTree = "<group>"; };
+		7AB261C21587003700B178FC /* Voice_Tom2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Tom2.m; sourceTree = "<group>"; };
+		7AB261C31587003700B178FC /* Voice_Woodblock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voice_Woodblock.h; sourceTree = "<group>"; };
+		7AB261C41587003700B178FC /* Voice_Woodblock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voice_Woodblock.m; sourceTree = "<group>"; };
 		7AEF8E371576EC65004D84EE /* Effect_Delay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Effect_Delay.h; sourceTree = "<group>"; };
 		7AEF8E381576EC65004D84EE /* Effect_Delay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Effect_Delay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,6 +280,24 @@
 				7A686095157A90D50018A3DC /* Voice_WavetableNoise.m */,
 				21D6E89E155C74B2003B5254 /* Voice.h */,
 				21D6E89F155C74B2003B5254 /* Voice.m */,
+				7AB261B31587003600B178FC /* Voice_Clave.h */,
+				7AB261B41587003600B178FC /* Voice_Clave.m */,
+				7AB261B51587003600B178FC /* Voice_HiHat.h */,
+				7AB261B61587003600B178FC /* Voice_HiHat.m */,
+				7AB261B71587003600B178FC /* Voice_Kick.h */,
+				7AB261B81587003700B178FC /* Voice_Kick.m */,
+				7AB261B91587003700B178FC /* Voice_Rim.h */,
+				7AB261BA1587003700B178FC /* Voice_Rim.m */,
+				7AB261BB1587003700B178FC /* Voice_Snare.h */,
+				7AB261BC1587003700B178FC /* Voice_Snare.m */,
+				7AB261BD1587003700B178FC /* Voice_Tick.h */,
+				7AB261BE1587003700B178FC /* Voice_Tick.m */,
+				7AB261BF1587003700B178FC /* Voice_Tom.h */,
+				7AB261C01587003700B178FC /* Voice_Tom.m */,
+				7AB261C11587003700B178FC /* Voice_Tom2.h */,
+				7AB261C21587003700B178FC /* Voice_Tom2.m */,
+				7AB261C31587003700B178FC /* Voice_Woodblock.h */,
+				7AB261C41587003700B178FC /* Voice_Woodblock.m */,
 				217A37D1155B542400201779 /* Supporting Files */,
 			);
 			path = Group4Project;
@@ -426,6 +471,15 @@
 				7A686096157A90D50018A3DC /* Voice_WavetableNoise.m in Sources */,
 				7A68609A157A93DB0018A3DC /* Envelope_Kick.m in Sources */,
 				7A68609F157AA0110018A3DC /* SoundFile_Cowbell.m in Sources */,
+				7AB261C51587003700B178FC /* Voice_Clave.m in Sources */,
+				7AB261C61587003700B178FC /* Voice_HiHat.m in Sources */,
+				7AB261C71587003700B178FC /* Voice_Kick.m in Sources */,
+				7AB261C81587003700B178FC /* Voice_Rim.m in Sources */,
+				7AB261C91587003700B178FC /* Voice_Snare.m in Sources */,
+				7AB261CA1587003700B178FC /* Voice_Tick.m in Sources */,
+				7AB261CB1587003700B178FC /* Voice_Tom.m in Sources */,
+				7AB261CC1587003700B178FC /* Voice_Tom2.m in Sources */,
+				7AB261CD1587003700B178FC /* Voice_Woodblock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

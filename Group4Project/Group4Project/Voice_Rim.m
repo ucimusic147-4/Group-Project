@@ -1,17 +1,17 @@
 //
-//  Voice_WavetableNoise.m
+//  Voice_Rim.m
 //  Group4Project
 //
 //  Created by Lab User on 6/2/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Voice_WavetableNoise.h"
+#import "Voice_Rim.h"
 
 #import "AQplayer.h"
 
 
-@implementation Voice_WavetableNoise
+@implementation Voice_Rim
 
 @synthesize env;
 
@@ -22,18 +22,19 @@
 
     amp = 0.;
     
-    b = malloc(sizeof(biquad));
+    b = malloc(sizeof(biquadD));
     [self biQuad_set];    
 
     
 	env = [[Envelope_Kick alloc] init];
-	env.attack = 0.05;
-	env.release = 0.05;
+	env.attack = 0.001;
+	env.release = 0.002;    
+//    env.sustain = 0.0237;
     env.sustain = 0.1;
 
 
     
-    Float64 harmonics[24] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    Float64 harmonics[24] = {0.2638, 0.8637, 0.2233, 0.0215, 0.1238, 0.1004, 0.1266, 0.0889, 0.0664, 0.0243, 0.0174, 0.0639, 0.0603, 0.0333, 0.0204, 0.0179, 0.0331, 0.0367, 0.0296, 0.0121, 0.0051, 0.0194, 0.0243, 0.0194};
     
     
     /* for each harmonic (outer loop) */
@@ -69,7 +70,7 @@
 
 -(void)fillSampleBuffer:(Float64*)buffer:(UInt32)num_samples
 {
-    deltaTheta = freq / kSR;
+    deltaTheta = 784.0 / kSR;
     
 	for (SInt32 i = 0; i < num_samples; i++)
 	{
@@ -91,8 +92,8 @@
         [env update:1];
         
         
-        buffer_temp[i] = amp * sin(theta * 2 * M_PI) * env.output;        
-        //buffer_temp[i] = [self biQuad:buffer_temp[i]];
+        buffer_temp[i] = amp * s * env.output;        
+        //buffer_temp[i] = [self biQuadD:buffer_temp[i]];
 
         
 		theta += deltaTheta;
@@ -134,13 +135,14 @@
     
     ffreq = 500.;
     dbGain = 0.;
+    bandwidth = 1.0;
     
     /* setup variables */
     A = pow(10, dbGain /40);
     omega = 2 * M_PI * ffreq /kSR;
     sn = sin(omega);
     cs = cos(omega);
-    alpha = sn * sinh(M_LN2 /2 * 1 * omega /sn);
+    alpha = sn * sinh(M_LN2 /2 * bandwidth * omega /sn);
     beta = sqrt(A + A);
     
 
@@ -165,9 +167,9 @@
 
 /* Below this would be biquad.c */
 /* Computes a BiQuad filter on a sample */
--(smp_type) biQuad:(smp_type)sample
+-(smp_typeD) biQuadD:(smp_typeD)sample
 {
-    smp_type result;
+    smp_typeD result;
     
     /* compute result */
     result = b->a0 * sample + b->a1 * b->x1 + b->a2 * b->x2 -
