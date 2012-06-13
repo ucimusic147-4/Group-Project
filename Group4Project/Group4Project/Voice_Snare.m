@@ -10,6 +10,7 @@
 
 #import "AQplayer.h"
 
+// this generates the sound when you shake the phone.
 
 @implementation Voice_Snare
 
@@ -25,6 +26,7 @@
     b = malloc(sizeof(biquadE));
     [self biQuad_set];    
 
+    // one theory on why the sounds behave differently, is that Absynth can deal with finer grain control of envelope times.
     
 	env = [[Envelope_Kick alloc] init];
 	env.attack = 0.001;
@@ -33,6 +35,7 @@
     env.sustain = 0.1;
 
 
+    // harmonics
     
     Float64 harmonics[24] = {0.0056, 0.0148, 0.0412, 0.1561, 0.0406, 0.204, 0.0625, 0.0544, 0.0451, 0.0602, 0.0625, 0.0489, 0.0138, 0.0287, 0.0159, 0.017, 0.028, 0.0373, 0.0281, 0.0202, 0.0207, 0.0309, 0.0329, 0.0386};
     
@@ -91,9 +94,11 @@
         /* update the envelope by one sample */
         [env update:1];
         
+        // an odd hack to allow us to process the instrument, then apply filtering (see for loop w/ buffer and buffer_temp below).  Found out you get really odd distortion if you try to biQuad the entire buffer instead of frame by frame.  --Stephen
+
         
         buffer_temp[i] = amp * s * env.output;        
-        //buffer_temp[i] = [self biQuadE:buffer_temp[i]];
+        buffer_temp[i] = [self biQuadE:buffer_temp[i]];
 
         
 		theta += deltaTheta;
@@ -127,6 +132,9 @@
 {
     [env off];
 }
+
+// an attempt to define instrument specific filtering in the class
+
 
 -(void) biQuad_set
 {

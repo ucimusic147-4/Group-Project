@@ -8,6 +8,7 @@
 
 #import "SoundFile_Cowbell.h"
 
+// Not in use.  An experiment to get multiple soundfile classes going.
 @implementation SoundFile_Cowbell
 
 -(id)init

@@ -8,6 +8,7 @@
 
 #import "Effect_Delay.h"
 
+// Not in use
 
 @implementation Effect_Delay
 

@@ -8,6 +8,9 @@
 
 #import "AQPlayer_SF.h"
 
+// Not in use. Replaced with _SynthSF
+
+
 @implementation AQPlayer_SF
 
 - (id)init

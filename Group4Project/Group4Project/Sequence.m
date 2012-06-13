@@ -8,6 +8,8 @@
 
 #import "Sequence.h"
 
+// Not in use
+
 @implementation Sequence
 
 -(id)init

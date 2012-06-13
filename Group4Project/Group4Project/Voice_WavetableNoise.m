@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// This is the more mallet-like instrument --Stephen
+
 #import "Voice_WavetableNoise.h"
 
 #import "AQplayer.h"
@@ -25,13 +27,14 @@
     b = malloc(sizeof(biquad));
     [self biQuad_set];    
 
+    // this instrument has an auto-release in its ADSR
     
 	env = [[Envelope_Kick alloc] init];
 	env.attack = 0.05;
 	env.release = 0.05;
     env.sustain = 0.1;
 
-
+    // dummy table since it's just a sine wave
     
     Float64 harmonics[24] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
     
@@ -90,6 +93,7 @@
         /* update the envelope by one sample */
         [env update:1];
         
+        // an odd hack to allow us to process the instrument, then apply filtering (see for loop w/ buffer and buffer_temp below).  Found out you get really odd distortion if you try to biQuad the entire buffer instead of frame by frame. [Ultimatly not needed for this instrument, but see it in action for Voice_Snare] --Stephen
         
         buffer_temp[i] = amp * sin(theta * 2 * M_PI) * env.output;        
         //buffer_temp[i] = [self biQuad:buffer_temp[i]];
@@ -126,6 +130,8 @@
 {
     [env off];
 }
+
+// an attempt to define instrument specific filtering in the class
 
 -(void) biQuad_set
 {

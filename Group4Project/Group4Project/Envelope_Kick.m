@@ -40,6 +40,7 @@
 -(void)on
 {
 	delta = delta_attack;
+    // Stephen added an auto-release version of Enveloping.
     [self performSelector:@selector(off)  withObject:nil afterDelay:sustain];
 }
 

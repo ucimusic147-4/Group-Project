@@ -8,6 +8,8 @@
 
 #import "Sequencer.h"
 
+// Not in use
+
 @implementation Sequencer
 
 -(void)setSeq:(Sequence*)_seq

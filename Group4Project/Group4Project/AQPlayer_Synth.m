@@ -14,6 +14,8 @@
 #import "Effect_Limiter.h"
 #import "Effect_Delay.h"
 
+// Not in use. Replaced with _SynthSF
+
 @implementation AQPlayer_Synth
 
 -(id)init

@@ -25,6 +25,7 @@
 #import "Effect_Limiter.h"
 
 @implementation AQPlayer_SynthSF
+// Class added by Stephen.  Allows soundfile and synth to play at same time
 
 -(id)init
 {
@@ -34,7 +35,8 @@
     
     pos = 1;
     
-
+    // pitches added by Stephen. Allows different pitches for different songs. 
+    
     pitches[0][0] =  0;
     pitches[0][1] =  59;
     pitches[0][2] =  62;
@@ -112,6 +114,8 @@
      voices[17] = [[Voice_Kick alloc] init];
     */
     
+    // Stephen's code to initialize the different voices.
+    
     for (SInt32 i = 2; i < kNumberVoices; i++)
     {
         voices[i] = [[Voice_WavetableNoise alloc] init];
@@ -139,6 +143,9 @@
     }
      */
 
+    
+    // Some voices are special (the "shake" note and the song file) --Stephen
+    
     voices[1] = [[Voice_Snare alloc] init];
     voices[1].amp = 0.5;
     ((Voice_Synth*)voices[1]).freq = [Voice_Synth noteNumToFreq:pitches[pos][1]];
@@ -153,8 +160,11 @@
     return self;
 }
 
+// Method added by Stephen to change instruments and songs, called by Tom's accel detection method.
 -(void)changeVoices
 {
+    
+    
     
      if (pos > 0) 
      {
@@ -171,6 +181,9 @@
      {
      pos = 1;
 /*
+ 
+        What looked like really cool promising instruments in Absynth (Additive synthesis of a singe waveform, specific harmonics, and some basic BiQuad filtering... sounds like crap here for some reason. --Stephen
+ 
          voices[1] = [[Voice_Snare alloc] init];
          voices[2] = [[Voice_Snare alloc] init];
          voices[3] = [[Voice_Tick alloc] init];
@@ -245,6 +258,7 @@
     
 }
 
+// it's really just a must button --Stephen
 -(void)playToggle
 {
     if ([sf isPaused]) {

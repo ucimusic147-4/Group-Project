@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+// Stephen's "brassy" instrument
+// All Voice_xxx classes are pretty much duplicates of each other and follow a very similar structure.
+
 #import "Voice_Wavetable.h"
 
 #import "AQplayer.h"
@@ -21,9 +24,13 @@
     
     amp = 0.;
     
+    // define some envelope properties --Stephen
+    
 	env = [[Envelope alloc] init];
 	env.attack = 0.07;
 	env.release = 0.2;
+    
+    // define the instrument's harmonics -- Stephen
     
     Float64 harmonics[24] = {0.7532,0.3546,0.1916,0.096,0.0968,0.0352,0.0034,0.0236,0.0111,0.0070,0.0070,0.0059,0.0055,0.0074,0.0059,0.0035,0.0026,0.0023,0.0023,0.0025,0.0009,0.0008,0.0008,0.0007};
      
